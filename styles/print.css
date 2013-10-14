@@ -1,0 +1,339 @@
+/*    Copyright (C) 2010 Matteo Lucarelli
+*/
+
+body {
+	font-size: 72%;
+	font-family: sans-serif;	
+	background: #fff;
+}
+body.login {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.headingContainer {
+	background:  #fff; 
+	position: relative;
+}
+/* IE6 Hack */
+* html .headingContainer {
+  position: relative;
+}
+.localNavContainer {
+	display:none;
+}
+
+.mimeicon{
+display:none;
+}
+
+.disclaimer{
+display:none;
+}
+
+.actions{
+display:none;
+}
+
+a{
+	color: #000;
+	text-decoration: none;
+}
+
+.mainHeading {
+	padding: 2px 4px 0px 4px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: black;
+	position: absolute;
+	bottom: 0px;
+	margin-left: 55px;
+}
+/* IE6 Hack */
+* html .mainHeading {
+  position: relative;
+}
+.contentHeading {
+	color: white;
+	padding: 2px 4px 2px 4px;
+	margin-top: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+	background: #555;
+}
+.contentSubHeading {
+	/*display:none;*/
+}
+.contentSubHeading#first {
+	margin-top: 0;
+	margin-bottom: 2px;
+}
+.siteName {
+	display: none;
+}
+.globalBox {
+	position: relative;
+	height: 4em;
+}
+
+/* IE6 Hack */
+* html .globalBox {
+  position: relative;
+}
+
+.globalBox#noNav {
+	height: 4em;
+}
+.globalBox div#signatory {
+	display:none;
+}
+
+/* IE6 Hack */
+* html .globalBox div#signatory {
+  position: relative;
+}
+
+.globalNav {
+	display:none;
+}
+
+.tree {
+	display:none;
+}
+
+/* IE6 Hack */
+* html .globalNav {
+  position: relative;
+}
+
+.globalNav li {
+	display: inline;
+	padding: 0px 4px 0px 4px;
+	border-left: 1px solid;
+ }
+.globalNav li#first {
+	border-left: none;
+	padding: 0px 4px 0px 0px;
+}
+
+form{
+	display: none;
+}
+
+.globalNav li form {
+	display: none;
+}
+.globalNav li input {
+	font-size: 0.8em;
+	border: 1px solid;
+	padding: 1px;
+}
+.globalNav li input#searchButton {
+	border-left:0;
+	padding: 0px;
+}
+.localNav {
+	padding:1px;
+	margin: 0px;
+	margin-top: 3px;
+	text-align: left;
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+}
+.localNav li {
+	font-size: 0.8em;
+	display: inline;
+	padding: 2px 4px 2px 4px;
+	border: 1px solid #fff;
+}
+
+.globalTR {
+	float: right;
+	width: 8px;
+	height: 8px;
+}
+.smallText {
+	font-size: 0.8em;
+}
+.contentContainer {
+	padding: 0px;
+	width: 100%;
+	margin: auto;
+}
+.content {
+	background-color: white;
+	padding: 0;
+	border-top: 1px solid #e0e0e0;
+}
+.content-l {
+}
+.content-r {
+}
+.content-br {
+}
+.content-bl {
+	padding: 0.6em 1em;
+}
+.content input, .content select {
+	font-size: 0.8em;
+}
+
+.content textarea {
+	border: 1px solid;
+	font-family: sans-serif;
+	font-size: 1.0em;
+}
+td {
+	vertical-align: top;
+}
+table.folderView {
+	border-collapse: collapse;
+	width: 100%;
+}
+table.folderView thead tr {
+	border-bottom: 1px solid rgb(189, 190, 192);
+}
+table.folderView th, table.folderView td {
+	padding: 0.1em 0.4em;
+}
+table.folderView th {
+	text-align: left;
+}
+table.folderView td {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+table.folderView td.center {
+	text-align: center;
+}
+table.folderView tr.folder {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+table.defaultView {
+	border-collapse: collapse;
+}
+table.defaultView thead tr {
+	border-bottom: 1px solid rgb(189, 190, 192);
+}
+table.defaultView th, table.defaultView td {
+	padding: 0.1em 0.4em;
+}
+table.defaultView th {
+	text-align: left;
+}
+table.defaultView td {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+table.defaultView td.center {
+	text-align: center;
+}
+table.defaultView tr.folder {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+td#userImage {
+	border: 1px solid rgb(189, 190, 192);
+}
+img.userImage {
+	height: 72px;
+}
+img.mimeicon {
+	height: 18px;
+	vertical-align: middle;
+	border: none;
+}
+img.treeicon {
+	border: none;
+	padding-right: 0.1em;
+}
+input.mimeicon {
+	height: 18px;
+	vertical-align: middle;
+	border: none;
+}
+ul.reviewer {
+	padding: 0;
+	margin: 0;
+}
+ul.reviewer li {
+	list-style: none;
+	padding: 0.1em 0em;
+	border-top: 1px solid rgb(163, 184, 203);
+}
+ul.reviewer li.first {
+	border-top: none;
+}
+ul.actions {
+	padding: 0;
+	margin: 0;
+}
+ul.actions li {
+	list-style: none;
+	padding: 0 0 0.1em 0;
+}
+ul.actions li.first {
+	border-top: none;
+}
+ul.documentDetail {
+	margin: 0;
+	padding:0;
+	font-size: 0.8em;
+	list-style:none;
+}
+
+.cbSelectTitle {
+	float:left;
+	width: 6em;
+}
+.cbSelectContainer {
+	overflow:auto;
+	height: 8em;
+	border: 1px solid;
+	padding: 0.2em 0;
+	margin: 0.2em 0;
+}
+.cbSelectContainer.empty {
+	height: 1em;
+}
+.cbSelectList {
+	padding: 0.1em;
+}
+.cbSelectItem {
+	list-style-type: none;
+}
+ul.pageList {
+	list-style-type: none;
+	padding: 0px;
+	margin: 1.5em 0 0 0;
+	text-align: center;
+}
+ul.pageList li {
+	display:inline;
+	margin: 0 0.2em;
+	font-weight: bold;
+}
+ul.pageList li#first {
+	margin-left: 0;
+	font-weight: normal;
+}
+/*
+ * I rather foolishly decided to have the title of the page exist at the
+ * bottom of the containing DIV element. This means using absolute
+ * positioning in order to get the desired effect in a way that is consistent.
+ * However, this causes problems when the fonts are scaled as overlap can
+ * occur with other elements, leading to unclean layout (since absolute
+ * positioning removes the element from the document flow). My solution is to
+ * place an empty element in the page directly before the title that remains
+ * in the document flow. This fakes a margin around the title.
+ * I've also applied this to the login form in the global navigation section.
+ */
+span.absSpacerNorm {
+  display: none;
+}
+
+span.absSpacerTitle {
+  display: none;
+}
+
+.footNote {
+	display:none;
+}

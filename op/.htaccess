@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} (.*)viewonline/([0-9]+)/([0-9]+)/(.+)$
+RewriteRule (.*)viewonline/([0-9]+)/([0-9]+)/(.+)$ $1op.ViewOnline.php?request=$2:$3 [PT]

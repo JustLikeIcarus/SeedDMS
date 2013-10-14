@@ -1,0 +1,6 @@
+# Make sure settings.xml can not be opened from outside!
+#Redirect /conf/settings.xml /index.php
+<Files ~ "^settings\.xml">
+Order allow,deny
+Deny from all
+</Files>

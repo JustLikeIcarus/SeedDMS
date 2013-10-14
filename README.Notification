@@ -1,0 +1,114 @@
+Notifications
+-----------------------------------------------
+
+Most changes made to documents or folders in SeedDMS can be monitored
+by the users. Notifications are send by email if a user or group
+has subscribed it.
+
+The following notifications are send to all users and groups having
+registered a notification for the event:
+
+op/op.AddDocument.php
+op/op.AddMultiDocument.php
+* adding a new document to a folder
+  subscribers of the parent folder
+
+op/op.AddSubFolder.php
+* adding a new subfolder to a folder
+  subscribers of the parent folder
+
+op/op.AddFile2.php
+op/op.AddFile.php
+* adding a new file to a document
+  subscribers of the document
+
+op/op.ApproveDocument.php
+* approval status has changed
+  subscribers of the document
+
+op/op.DocumentAccess.php
+* access rights or ownership has changed
+  subscribers of the document
+
+op/op.DocumentNotify.php
+* document notification was changed
+  owner or group of the document/notification
+
+op/op.EditComment.php
+* document's comment has been changed
+  subscribers of the document
+
+op/op.EditDocument.php
+* document has been changed
+  subscribers of the document
+
+op/op.EditFolder.php
+* folder has been changed
+  subscribers of the folder
+
+op/op.FolderAccess.php
+* access rights or ownership has changed
+  subscribers of the folder
+
+op/op.FolderNotify.php
+* folder notification was changed
+  owner or group of the folder/notification
+
+op/op.ManageNotify.php
+* notification was removed
+  owner of the notification
+
+op/op.MoveDocument.php
+* document was moved
+  subscribers of the document
+
+op/op.MoveFolder.php
+* folder was moved
+  subscribers of the folder
+
+op/op.OverrideContentStatus.php
+
+op/op.RemoveDocumentFile.php
+* file of document was removed
+  subscribers of the document
+
+op/op.RemoveDocument.php
+* document was removed
+  subscribers of the document
+
+op/op.RemoveFolder.php
+* folder was removed
+  subscribers of the folder
+
+op/op.RemoveVersion.php
+* version of document was removed
+  subscribers of the document
+
+op/op.RemoveWorkflowFromDocument.php
+* Workflow has been removed from document version
+  subscribers of the document
+
+op/op.ReturnFromSubWorkflow.php
+* Subworkflow has been ended and parent workflow will be continued
+  subscribers of the document
+
+op/op.ReviewDocument.php
+* document was reviewed
+  subscribers of the document
+
+op/op.RewindWorkflow.php
+* Workflow was rewind to beginning
+  subscribers of the document
+
+op/op.RunSubWorkflow.php
+* Subworkflow was started
+  subscribers of the document
+
+op/op.TriggerWorkflow.php
+* Workflow transition was triggered
+  subscribers of the document
+
+op/op.UpdateDocument2.php
+op/op.UpdateDocument.php
+* document was updated
+  subscribers of the document

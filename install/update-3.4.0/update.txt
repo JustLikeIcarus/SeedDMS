@@ -1,0 +1,7 @@
+Release information for 3.4.0
+-------------------------------------
+
+This release contains various database changes which can all be done
+within the automatic upgrade process. Besides some new tables the most
+noteable change is the addition of a new primary id field to the
+document content table (tblDocumentContent).

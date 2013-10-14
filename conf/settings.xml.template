@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <site>
+    <!-- siteName: Name of site used in the page titles. Default: SeedDMS
+       - footNote: Message to display at the bottom of every page
+       - printDisclaimer: if true the disclaimer message the lang.inc files will be print on the bottom of the page
+       - language: default language (name of a subfolder in folder "languages")
+       - theme: default style (name of a subfolder in folder "styles")
+    -->
+    <display
+      siteName = "SeedDMS"
+      footNote = "SeedDMS free document management system - www.seeddms.org"
+      printDisclaimer="true"
+      language = "en_GB"
+      theme = "bootstrap"
+    >  
+    </display>
+    <!-- strictFormCheck: Strict form checking. If set to true, then all fields in the form will be checked for a value. If set to false, then (most) comments and keyword fields become optional. Comments are always required when submitting a review or overriding document status.
+       - viewOnlineFileTypes: files with one of the following endings can be viewed online (USE ONLY LOWER CASE CHARACTERS)
+       - enableConverting: enable/disable converting of files
+       - enableEmail: enable/disable automatic email notification
+       - enableUsersView: enable/disable group and user view for all users
+       - enableFullSearch: false to don't use fulltext search
+       - enableLanguageSelector: false to don't show the language selector after login
+       - enableClipboard: false to hide the clipboard
+       - enableFolderTree: false to don't show the folder tree
+       - expandFolderTree: 0 to start with tree hidden
+       -                   1 to start with tree shown and first level expanded
+       -                   2 to start with tree shown fully expanded     
+       - stopWordsFile: path to stop word file for indexer
+       - sortUsersInList: how to sort users in lists ('fullname' or '' (default))
+    -->   
+    <edition
+      strictFormCheck = "false"
+      viewOnlineFileTypes = ".txt;.text;.html;.htm;.pdf;.gif;.png;.jpg;.jpeg"
+      enableConverting = "true"
+      enableEmail = "true"	
+      enableUsersView = "true"
+      enableFullSearch = "false"
+      enableClipboard = "false"
+      enableFolderTree = "true"
+      expandFolderTree = "1"
+      enableLanguageSelector = "true"
+      stopWordsFile = ""
+      sortUsersInList = ""
+    >
+    </edition> 
+    <!-- enableCalendar: enable/disable calendar
+       - calendarDefaultView: calendar default view ("w" for week,"m" for month,"y" for year)
+       - firstDayOfWeek: first day of the week (0=sunday, 6=saturday)
+    -->  
+    <calendar
+      enableCalendar = "true"
+      calendarDefaultView = "y"
+      firstDayOfWeek = "0"
+    >
+    </calendar>
+  </site>
+  
+  <system>
+    <!-- rootDir: Path to where SeedDMS is located
+       - httpRoot: The relative path in the URL, after the domain part. Do not include the
+       -           http:// prefix or the web host name. e.g. If the full URL is
+	     -           http://www.example.com/seeddms/, set $_httpRoot = "/seeddms/".
+	     -           If the URL is http://www.example.com/, set $_httpRoot = "/".
+       - contentDir: Where the uploaded files are stored (best to choose a directory that
+       -             is not accessible through your web-server)
+       - stagingDir: Where partial file uploads are saved
+       - luceneDir: Where the lucene fulltext index iѕ saved
+       - logFileEnable: set false to disable log system
+       - logFileRotation: the log file rotation (h=hourly, d=daily, m=monthly)
+       - enableLargeFileUpload: support for jumploader
+       - partitionsize: size of chunk uploaded by jumploader
+       - dropFolderDir: where files for document upload are located
+       - cacheDir: where the preview images are saved
+    -->
+    <server
+      rootDir = ""
+      httpRoot = "/seeddms/"
+      contentDir = ""
+      stagingDir = ""
+      luceneDir = ""
+      logFileEnable = "true"
+      logFileRotation = "d"
+      enableLargeFileUpload = "true"
+      partitionSize = "2000000"
+      dropFolderDir = ""
+      cacheDir = ""
+    >
+    </server>
+    
+    <!-- enableGuestLogin: If you want anybody to login as guest, set the following line to true
+       -                   note: guest login should be used only in a trusted environment
+			 - enablePasswordForgotten: Allow users to reset their password
+       - restricted: Restricted access: only allow users to log in if they have an entry in the local database (irrespective of successful authentication with LDAP).
+       - enableUserImage: enable users images
+       - disableSelfEdit: if true user cannot edit his own profile
+    -->    
+    <authentication
+      enableGuestLogin = "false"
+      enablePasswordForgotten = "false"
+      restricted = "true"
+      enableUserImage = "false"
+      disableSelfEdit = "false"
+    >
+      <connectors>
+        <!-- ***** CONNECTOR LDAP  *****
+           - enable: enable/disable connector
+           - type: type of connector ldap / AD
+           - host: hostname of the authentification server
+           -       URIs are supported, e.g.: ldaps://ldap.host.com
+           - port: port of the authentification server
+           - baseDN: top level of the LDAP directory tree
+        -->  
+        <connector
+          enable = "false"
+          type = "ldap"
+          host = "ldaps://ldap.host.com"
+          port = "389"
+          baseDN = ""
+          bindDN="" 
+          bindPw=""
+        >
+        </connector>
+        <!-- ***** CONNECTOR Microsoft Active Directory  *****
+           - enable: enable/disable connector
+           - type: type of connector ldap / AD
+           - host: hostname of the authentification server
+           - port: port of the authentification server
+           - baseDN: top level of the LDAP directory tree
+           - accountDomainName: sample: example.com
+        -->  
+        <connector
+          enable = "false"
+          type = "AD"
+          host = "ldap.example.com"
+          port = "389"
+          baseDN = ""
+          accountDomainName = "example.com"
+	  bindDN="" 
+	  bindPw=""
+        >
+        </connector>
+      </connectors>
+    </authentication>
+    <!-- ADOdbPath: Path to adodb. This is the directory containing the adodb directory
+       - dbDriver: DB-Driver used by adodb (see adodb-readme)
+       - dbHostname: DB-Server
+       - dbDatabase: database where the tables for seeddms are stored (optional - see adodb-readme)
+       - dbUser: username for database-access
+       - dbPass: password for database-access
+    -->    
+    <database
+      ADOdbPath = ""
+      dbDriver = "_DBC_DBTYPE_"
+      dbHostname = "_DBC_DBSERVER_"
+      dbDatabase = "_DBC_DBNAME_"
+      dbUser = "_DBC_DBUSER_"
+      dbPass = "_DBC_DBPASS_"
+    >
+    </database>
+    <!-- smtpServer: SMTP Server hostname
+       - smtpPort: SMTP Server port
+       - smtpSendFrom: Send from
+    -->    
+    <smtp 
+      smtpServer = "localhost" 
+      smtpPort = "25" 
+      smtpSendFrom = "seeddms@localhost"
+    />    
+  </system>
+ 
+  
+  <advanced>
+    <!-- siteDefaultPage: Default page on login. Defaults to out/out.ViewFolder.php
+       - rootFolderID: ID of root-folder (mostly no need to change)
+       - titleDisplayHack: Workaround for page titles that go over more than 2 lines.
+    -->  
+    <display
+      siteDefaultPage =""      
+      rootFolderID = "1"
+      titleDisplayHack = "true"
+
+    >
+    </display>
+    <!-- guestID: ID of guest-user used when logged in as guest (mostly no need to change)
+       - adminIP: if enabled admin can login only by specified IP addres, leave empty to avoid the control
+       -          NOTE: works only with local autentication (no LDAP)
+    --> 
+    <authentication
+      guestID = "2"
+      adminIP = ""     
+    >
+    </authentication>
+    <!-- enableAdminRevApp: false to don't list administrator as reviewer/approver
+       - versioningFileName: the name of the versioning info file created by the backup tool
+       - workflowMode: 'traditional' or 'advanced'
+       - enableVersionDeletion: allow to delete versions after approval
+       - enableVersionModification: allow to modify versions after approval
+       - enableDuplicateDocNames: allow duplicate names in a folder
+    --> 
+    <edition
+      enableAdminRevApp = "false"
+      versioningFileName = "versioning_info.txt"
+      workflowMode = "advanced"
+      enableVersionDeletion = "true"
+      enableVersionModification = "true"
+      enableDuplicateDocNames = "true"
+    >
+    </edition>
+    <!-- coreDir: Path to SeedDMS_Core (optional)
+       - luceneClassDir: Path to SeedDMS_Lucene (optional)
+       - contentOffsetDir: To work around limitations in the underlying file system, a new 
+       -                   directory structure has been devised that exists within the content 
+       -                   directory ($_contentDir). This requires a base directory from which 
+       -                   to begin. Usually leave this to the default setting, 1048576, but can 
+       -                   be any number or string that does not already exist within $_contentDir.	
+       - maxDirID: Maximum number of sub-directories per parent directory. Default: 32700.
+       - updateNotifyTime: users are notified about document-changes that took place within the last "updateNotifyTime" seconds
+    -->
+    <server
+      coreDir = ""
+      luceneClassDir = ""
+      contentOffsetDir = "1048576"
+      maxDirID = "0"
+      updateNotifyTime = "86400"
+    >
+    </server>
+
+  </advanced>
+
+</configuration>

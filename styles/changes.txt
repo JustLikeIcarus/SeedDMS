@@ -1,0 +1,470 @@
+-------------------------------------------------------------------
+                     Changes in version 1.7.2
+-------------------------------------------------------------------
+
+- Style Sheet modifications to improve IE6 compatibility, contributed by
+	Juan Lago (thanks Juan!). This fixes some placement issues with elements
+	that have the position attribute set to "absolute".
+
+- The div elements that are used to clear floats have been fixed so that they
+	have zero height in IE6. It is not enough to specify "height: 0"; one must
+	also set "font-size:0" otherwise IE6 will set the height of the element to
+	match the standard font size.
+
+- UI layout improvements. Various changes to the user interface to improve
+	the page flow and allow for further expansion in the future. The context
+	menu bar has been separated from the page heading into its own container
+	underneath the title. It's a more logical place to present the menu, and
+	will allow for the easy addition of further sub-headings in the future
+	without compromising the page flow.
+
+- The last dependency on the original theme system has been eliminated with
+	the introduction of updated chooser dialogues for selecting files and
+	folders. These dialogues have the new themes and the code has been revamped,
+	replacing the old table structures with unordered lists.
+
+- LDAP update. A minor change to the LDAP authentication code to allow for
+	the use of URIs to identify the server name (e.g. ldaps://host.com).
+	Also, the LDAP version is set to 3 in order to support secure connections.
+
+- New language translations for Czech and Slovak. Contributed by SF user
+	helix84 (thanks!).
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.7.1
+-------------------------------------------------------------------
+
+- Re-vamped Notification system allows users to receive an email when a
+  document or folder is changed. This is a new, event-based mechanism that
+  notifies the user as soon as the change has been made and replaces the
+  cron mechanism originally developed. Any user that has read access to a
+  document or folder can subscribe to be notified of changes. Users that
+  have been assigned as reviewers or approvers for a document are
+  automatically added to the notification system for that document.
+
+  A new page has been created for users to assist with the management of
+  their notification subscriptions. This can be found in the "My Account"
+  section under "Notification List".
+
+- The test used to identify HTTPS connections has been improved so that it
+  correctly identifies IIS servers that have ISAPI enabled but are not
+  using HTTPS protocol.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.7.0
+-------------------------------------------------------------------
+
+- Fixes to CSS display bugs. Minor updates to the display.
+
+- Improved handling of character escape sequences.
+
+- Review / Approve dates added to folder views and search results.
+
+- New file system directory management code to accommodate limitations in the
+  underlying filesystem which restrict the number of files that MyDMS can
+  store. MyDMS now uses a nested directory structure to store files, rather
+  than a flat one. However, note that individual files are still stored one
+  per directory in order to preserve compatibility with older versions of
+  MyDMS.
+
+  For details of the problem and the solution implemented, please refer to:
+
+    http://mydms.sf.net/2007/08/15/new-file-system-storage-structure/
+
+- Hungarian translation.
+
+- And as a bonus, there is a Drupal theme compatible with MyDMS.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.6.1
+-------------------------------------------------------------------
+
+- Theme and language choice are now saved as user attributes between
+	sessions. Read update-1.6.1.txt for changes to database schema.
+
+- Link to document review / approval page from out.ViewDocument.php.
+
+- French translation.
+
+- Brazilian Portuguese translation.
+
+- Traditional Chinese translation.
+
+- Relaxation of criteria for selecting reviewers / approvers. Users now only
+	require read access to be eligible reviewers or approvers.
+
+- Documents are now displayed in the correct sequence in the folder view.
+
+- Documents can be downloaded directly from the folder view by clicking their
+	icon.
+
+- Document icons in the folder view now reflect the document type.
+
+- Empty passwords are not accepted, even when JS is disabled in the browser.
+
+- New restricted access mode rejects login from users who are not entered
+	into the internal database, even if LDAP authentication was successful.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.6.0
+-------------------------------------------------------------------		     
+
+- Introduction of a document workflow system that manages the life-cycle of a
+  document, including review and approval stages.
+
+	Details:
+
+	Document Class:
+		Created new methods:
+			Document::addIndReviewer()
+			Document::addGrpReviewer()
+			Document::addIndApprover()
+			Document::addGrpApprover()
+
+		Changes to:
+			Document::addContent()
+
+	New Class: Email.
+
+	out.AddDocument.php
+	op.AddDocument.php
+		Changes to allow selection of reviewers and approvers.
+
+	Group Class:
+		Changes to:
+			Group::getUsers() -- query optimised
+		New Methods:
+			Group::getReviewStatus()
+			Group::getApprovalStatus()
+
+	User Class:
+		New Methods:
+			User::getReviewStatus()
+			User::getApprovalStatus()
+
+	Class Folder:
+		Changes to:
+			Folder::addDocument() -- accept reviewers, approvers as parameters.
+
+	New Class: AddContentResultSet.
+
+	Database:
+		Document version field changed from TINYINT to unsigned SMALLINT throughout
+		database.
+		`tblGroupMembers`:
+			`id` field removed as it is unnecessary.
+			Created a primary of `groupID`, `userID`.
+
+	DocumentContent Class:
+		Created new methods:
+			DocumentContent::getStatus()
+			DocumentContent::getReviewStatus()
+			DocumentContent::getApprovalStatus()
+			DocumentContent::delIndReviewer()
+			DocumentContent::delGrpReviewer()
+			DocumentContent::delIndApprover()
+			DocumentContent::delGrpApprover()
+
+	out.ViewDocument.php
+	op.ViewDocument.php
+		Changes to incorporate display of workflow status.
+		Links to allow user to change status of a document revision.
+
+	out.UpdateDocument.php
+	op.UpdateDocument.php
+		Changes to allow selection of reviewers and approvers.
+
+	out.Login.php
+	op.Login.php
+		redirect user to originally requested URL upon successful login.
+
+	out.ReviewDocument.php
+	op.ReviewDocument.php
+	out.ApproveDocument.php
+	op.ApproveDocument.php
+		Created to enable users to review and approve documents.
+
+	out.OverrideContentStatus.php
+	op.OverrideContentStatus.php
+		Allows document owner or site administrator to override the status of a
+		document.
+
+	out.SetReviewersApprovers.php
+	op.SetReviewersApprovers.php
+		Allows document owner or site administrator to re-assign reviewers and
+		approvers to a document revision that is pending review or approval.
+
+	out.ActionSummary.php
+		Lists all the documents owned by current user that are pending review or
+		approval. Lists all documents that are awaiting review or approval by the
+		user.
+
+	Search page now allows user to search for documents pending review or
+	approval. Search results display overall document status.
+
+- Admin user cannot be deleted, and admin privilege cannot be removed from
+	the admin user. Previously, both actions were possible.
+
+- Users can be assigned administrative privileges in the User Manager.
+
+- Deleting document revisions or the document itself notifies all affected
+	users by email, deletes entries from all status logs.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.5.1
+-------------------------------------------------------------------		     
+
+- Fixed a bug in the keyword editing code which was preventing users from
+  adding default keywords into global keyword categories.
+
+-------------------------------------------------------------------
+                     Changes in version 1.5.0
+-------------------------------------------------------------------		     
+
+- Optimised search. Improved the performance of the search function by
+  placing more of the work on the database and by applying indexes to some of
+  the tables. Sub-folder searches are also dramatically improved due to the
+  incorporation of a folderList field in the tblDocuments table.
+
+- Optimised display. New compact theme significantly reduces the page load
+  times. This is the default theme. The original is still available as a
+  selection.
+
+- Changed file download headers such that downloading works with IE over SSL.
+
+- Changed all instances of $HTTP_COOKIES_VARS, which has been deprecated, to
+  $_COOKIE.
+
+- Replaced all short open tags (<?) with <?php tags, including <?= tags.
+
+- Removed the dependency upon register_globals.
+
+- Database: removed the id column from tblDocumentContent. Changed the
+  primary key to be (document, version) with the auto_increment on the
+  version field. This enables the database to automatically assign the next
+  appropriate version number to any new row inserted into the table without
+  having to explicitly look up the existing version value, increment the
+  result and store that as part of the insert statement. It guarantees that
+  there will be no conflicts or duplication of version numbers by
+  simultaneous inserts. The id field was not required as it was not used
+  anywhere except as a convenient identifier. It was easily replaced by
+  (document id, version).
+
+- Database: Moved the lock field into a separate table for managing locks.
+  Fixes a problem where it was possible, although unlikely, for two people to
+  simultaneously request a lock on a document.
+
+- The settings file, inc/inc.Settings.php, is renamed in the distribution to
+  inc/inc.Settings-sample.php. This is to avoid any existing settings being
+  deleted during an upgrade. To use MyDMS for the first time, users must now
+  copy (or move) this file to inc/inc.Settings.php and edit before
+  using MyDMS.
+
+
+-------------------------------------------------------------------
+                     Changes in version 1.4.4
+-------------------------------------------------------------------		     
+
+- All files released as GPL as license recommends.
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.4.3
+-------------------------------------------------------------------
+
+- Downloading document: fixed security bug 
+
+-------------------------------------------------------------------
+                     Changes in Version 1.4.2
+-------------------------------------------------------------------
+
+- SQL injection bug fixed
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.4.1
+-------------------------------------------------------------------
+
+- Security Bug fixed that allowed unauthorized users to view
+  documents
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.4
+-------------------------------------------------------------------
+
+- New interface for user- and group-administration
+
+- Delete old revisions
+
+- Folder- and document-chooser now show a collapsed tree by default
+
+- You can now prepare both personal and global lists of keywords and
+  insert them easily for your documents
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.3.1
+-------------------------------------------------------------------
+
+- Choose language and theme
+  Users can now choose their preferred language and theme on the
+  login-screen.
+
+- Split of language file
+  inc.Language.php has been splitted so that every language is
+  provided in its own file.
+
+- Added ADOdb
+  Due to ADOdb MyDMS is no longer limited to MySQL. Every database
+  that is supported by ADOdb can be used together with MyDMS
+
+- Admin-Tool: Overview of folders and documents
+  A tool that shows a list of all folders and documents together 
+  with the ACLs has been added. The section "admin-tools" will
+  become bigger in the next versions (import files etc).
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.3.0
+-------------------------------------------------------------------
+
+- New feature: Auto-Conversion to HTML
+  When uploading files they are now converted to HTML automatically.
+  So you can now even view Winword-files online with your favourite
+  browser.
+
+- Integrated themes
+  Themes (again: thanks to Marcel van Groenigen), which were only
+  available by a seperate download so far, are now fully integrated
+  into MyDMS.
+  I'm looking forward to MacOS X Themes :-)
+
+- Fixed bug: Search function
+  An error occured if no folder had been chosen. This has been fixed.
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.2.1
+-------------------------------------------------------------------
+
+- Improved searching functionality
+  MyDMS now offers you a lot more options to help you find exactly
+  what you were looking for.
+  This is only the first stop of improvement: Look forward to an
+  even more powerful search engine in the next versions :-)
+
+- Security-Bug: Session-ID
+  One could guess the session-id very easily, since it was only a
+  two digit number. This has been corrected so that it should now
+  be impossible to get illegal access this way.
+  Tip: Empty tblSessions once a day (by a cron-job for example).
+
+
+-------------------------------------------------------------------
+                     Changes in Version 1.2.0
+-------------------------------------------------------------------
+- Move documents and folders
+  If you have put folders or documents to the wrong place or just
+  want to re-organize the structure you can now easily move
+  documents and folders.
+
+- New languages
+  A Russian (thanks to Dmitri) and a Durch version (thanks to André
+  Koot) are now available, too.
+
+- Upload-Bug
+  With certain configurations moving the temporary file of on upload
+  caused problems. MyDMS now uses the built-in move_uploaded_file()
+  function to prevent this error.
+
+
+-------------------------------------------------------------------
+                         Changes in Version 1.1.2
+-------------------------------------------------------------------
+
+- Sequence of Documents and Folders
+  One of the most wanted features has been realized: The user has
+  now full control of the sequence in which documents and folders
+  appear in the system.
+
+- Related Documents
+  Every documents now has a list of link to related documents.
+  There are two kinds of links: public and private ones; public
+  links can be seen by anyone, while private ones are only visible
+  to the user that created them.
+  Users with read-only access can only add private links, while
+  users with at least read-write access can decide which type of
+  link they want to add.
+  Private links can only be deleted by the user that has created
+  them while public links - no matter who created them - can be
+  deleted by all users with read-write access.
+
+- Fixed Bug: Delete documents
+  When deleting documents they were removed only from the database.
+  The files in the content-directory were kept.
+
+- Fixed Bug: View and download documents.
+  Very ling filenames (more than 70 characters) caused problems
+  with viewing and downloading of documents. By runnning the
+  db-update filenames with up to 150 characters are now possible.
+
+
+-------------------------------------------------------------------
+                         Changes in Version 1.1.1
+-------------------------------------------------------------------
+
+- Spanish translation
+  Eugenio Ramajo has completely translated MyDMS to Spanish
+
+- Disable guest-login
+  You can now disable the guest-login introduced in Version 1.1.0
+  by setting $_enableGuestLogin to false.
+
+- Confirmation for deletion
+  When deleting documents or folders you now have to confirm this
+  action to prevent you from accidentaly deleting important data.
+
+- Security improved
+  By manually changing the folder-ID in the URL it was possible to
+  "illegaly" show folders or documents (but downloading or viewing
+  the actual content was not possible).
+
+
+-------------------------------------------------------------------
+                         Changes in Version 1.1.0
+-------------------------------------------------------------------
+
+- Guest-Login
+  You can now choose to log-in as guest so that you can access your
+  documents more quickly. The guest user cannot be added to the ACLs.
+  So take care that the default access is at least "read" if you wish
+  to have access with the guest-user.
+  You cannot edit the guest-users's account.
+
+- Download documents more quickly
+  If you want to download the current version (or view it online) there
+  is no more need to scroll to the end of the document's page: Now there
+  is a button just on top of the site for downloading the current version.
+
+- Icons for Mime-Types
+  According to the document's MIME-type an additional icon is show.
+  (Icons from KDE3).
+
+- Correct filename when downloading
+  When downloading a file it was named data.[extension] up to know. This has
+  been replaced by the original filename.
+
+
+-------------------------------------------------------------------
+                        Changes in Version 1.0.1
+-------------------------------------------------------------------
+
+- if you had the GNU test-package installed on your machine, the function
+  getText() caused a fatal error. The problem was solved by renaming the
+  function.

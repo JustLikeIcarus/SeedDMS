@@ -1,0 +1,79 @@
+Show workflow steps after document has been released (keep workflow tab)
+
+Show documents in calendar when they where uploaded.
+
+Add attribute type 'date'
+
+Update comment and date of a review/approval, if the same status is set
+again. Currently setting the same status is turned of, because it didn't
+have any effect, which is quite confusing if the user can do an operation
+which has not the expected result.
+
+Show number of documents that needs care (approval, review, any other action
+in a workflog) next to Login/Logout-Menu.
+
+Show message on doc info page if documents expects an action like review,
+approval, etc.
+
+Import and export of a workflow as xml.
+
+Find a way to make the workflows adjustable when used for a document.
+e.g. a workflow shall be used for a number of document but the users of
+a transtion has to be altered for each document. This is basically reusing
+a workflow with minor changes. Possible Solution: create new table
+tblWorkflowTransionDocument[Users|Groups] which has an extra column
+for the document. If there is an entry in that table, use it instead
+of the default in tblWorkflowTransiton[Users|Groups]
+
+Drop foreign constraint in tblSession:userid to tblUser:id. This would allow
+to set the userid to 0 on logout, but keep the cookie and consequently
+the session data. See op.Login.php and op.Logout.php
+
+Allow to specify fine grained notification (e.g. deleting a document, folder)
+
+Have access rights depending on document status. This will allow to
+restrict access when a document is in a workflow or has been rejected.
+
+There are still global variable in class SeedetoDMS_Bootstrap_Style
+
+Settings::searchConfigFilePath() and Settings::getConfigDir() use different
+approaches to get the configuration directory.
+
+Show expiration status of documents in document list
+
+Export/Import content as xml (even for subfolders)
+
+Copy folders recursivly
+
+Allow operations like  delete, move, approve, etc. on a list of documents
+
+Upload of multiple documents without an applet
+
+Do not show documents which are not reviewed or approved or rejected
+
+installation script:
+- user simply unpack the tar.gz in a server folder and access that folder
+- on startup if there are installation problems php automatically run the configuration script
+- the data folder creation can be automatic (user/password for server) or manual (yet ready folder)
+- same for the db and the db user
+- db creation (run of create table.sql) shoul control if db is yet filled and control for update to do
+- the inc/inc.Setting.php is filled asking user entry
+- the script can be used to test installation problem without affecting the current installation
+
+The document state is currently not updated when a user is deleted from users list. 
+For example user A is the only pending approver for a document, then the document is in draft state.
+When A is deleted the document should pass automatically in release status.
+This could be done with a new function controlling the existance of all the pending approver/reviewer
+and eventually updating the status of the document. This function will be called by user-remove function.
+
+Sometimes in the DB are written messages strings in plain language whose 
+language depends on the current user and will never be translated.
+This can be avoided using only coded messages
+
+The mail language is translated using the current user language but should use 
+the receiver language (not easy).
+
+In my Documents->all documents there should be two lists: one (the current) with 
+the user's document, and another with the user's updated document (that's because 
+one user could have updated a document not owned by himself)
+

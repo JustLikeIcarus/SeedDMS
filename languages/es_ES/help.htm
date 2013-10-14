@@ -1,0 +1,183 @@
+<h1>Notas Generales</h1>
+
+<p>
+DMS (Sistema de Gestión de Documentos) está diseñado para compartir documentos,
+controlando el flujo de trabajo, permisos de acceso y la organización en general.
+</p>
+
+<p>
+Mediante el menú de primer nivel, el usuario puede acceder a los distintos datos almacenados en el sistema:
+<ul>
+<li>Contenido: le permite navegar por los documentos al estilo del explorador de archivos.
+<li>Mis documentos: Tiene varias formas de acceder a los documentos de su interés:
+<ul>
+<li>Documentos en proceso: lista de documentos pendientes de revisión o aprobación por el usuario,
+documentos propiedad del usuario que esperan ser aprobados o revisados, documentos bloqueados por el usuario.
+<li>Todos los documentos: lista de todos los documentos propiedad del usuario.
+<li>Resumen de revisión: lista de todos los documentos que fueron revisados o están esperando revisión por el usuario.
+<li>Resumen de Aprobados: lista de todos los documentos que fueron aprobados o están esperando aprobación por el usuario.
+</ul>
+</ul>
+</p>
+
+<p>
+Este DMS también provee un calendario un calendario que sirve como tablón de anuncios virtual para compartir notas,
+citas, vencimientos y compromisos.
+</p>
+
+
+<h1>Derechos</h1>
+
+<p>
+Los usuarios autorizados pueden establecer si otros usuarios acceden a las carpetas y documentos disponibles y como lo hacen.
+</p>
+
+<h2>Niveles de Derechos</h2>
+<p>
+Los posibles niveles de acceso son:
+<ul>
+<li>Permiso Total: El usuario puede realizar cualquier operación.
+<li>Lectura y Escritura: el usuario puede actualizar registros y añadir contenido a las carpetas.
+<li>Lectura solo: el usuario puede ver contenidos de las carpetas y descargar documentos.
+<li>Sin acceso: el usuario no puede ver los contenidos de las carpetas o documentos individuales.
+</ul>
+</p>
+
+<p>
+Por defecto los administradores tienen permiso total de cada documento y carpetas
+en el sistema. on the system. Del mismo modo, el propietario del documento tiene permiso total en sus documentos.
+</p>
+
+<p>
+Solamente el administrador puede cambiar el propietario de un documento.
+</p>
+
+<h2>Gestión de Derechos</h2>
+<p>
+Para cada carpeta o ducumento los permisos son gestionados a través de diferentes dispositivos.
+<ul>
+<li>Los permisos por defecto son aplicados en ausencia de otros específicos.
+<li>La lista de permisos le permiten especificar excepciones a los permisos por defecto.
+</ul>
+</p>
+
+<h2>Acceso heredado</h2>
+<p>
+Los permisos de carpetas y documentos pueden ser asignados como hereditarios.
+En estos casos los ficheros y carpetas heredan los mismos permisos de la carpeta
+que los contienen.
+</p>
+
+
+<h1>Flujo de Trabajo de Documentos</h1>
+
+<p>
+El sistema automáticamente maneja el flujo de trabajo de cada documento y archiva 
+cambios, versiones, comentarios realizados, etc.
+</p>
+
+<h2>Ciclo de Validación</h2>
+<p>
+El flujo normal requiere, cuando lee un nuevo documento o una
+nueva versión, para indicar a algunos usuarios o grupo de usuarios como revisores y/o aprobadores.
+Los usuarios listados como revisores o aprobadores tienen
+que explicar su aprobación del documento. Cuando esta operación
+está completada, por lo tanto todos los usuarios listados han hecho sus
+revisiones/aprovaciones, es estado del documento será asignado a 'publicado'.
+</p>
+
+<p>
+El revisor/aprobador puede denegar su aprobación del documento.
+En este caso el estado del documento será 'rechazado'
+</p>
+
+<p>
+Un documento que no se asigna a los revisores/aprobadores toma inmediatamente el estado de 'publicado'.
+</p>
+
+<p>
+Como aprobador/revisor puede indicar grupos de usuarios. Es este caso la 
+revisión/aprobación debe ser realizada por todos los usuarios que pertenecen al grupo.
+</p>
+
+<p>
+El propietario del documento puede en cualquier momento modificar la lista de revisores/aprobadores.
+</p>
+
+<h2>Estados de los documentos</h2>
+<p>
+Los posibles estados de un documento son:
+<ul>
+<li>Borrador pendiente de aprobación: una o más de las aprobaciones mencionados aún no han manifestado su aprobación.
+<li>Borrador pendiente de revisión: uno o más de los revisores listados no ha manifestado su revisión.
+<li>Publicado: El documento ha completado su ciclo de validación.
+<li>Rechazado: el documento ha interrumpido su ciclo de validación.
+<li>Expirado: ha excedido la fecha límite para completar la validación del documento.
+<li>Obsoleto: el estado de un documento dado a conocer se puede cambiar al obsoleto. Esto 
+está pensado como una alternativa a la cancelación del documento. El estado obsoleto
+es reversible.
+</ul>
+</p>
+
+<h2>Expiración</h2>
+<p>
+Para cada documento en producción se puede asignar una fecha de vencimiento
+Una vez pasado el día no sera posible revisar y aprobar
+y el documento pasará al estado de 'expirado'.
+</p>
+
+<p>
+La fecha de vencimiento es considerado solamente para la última versión del documento
+y tiene efecto sólo en el proceso del documento.
+</p>
+
+
+<h1>Otras características</h1>
+
+<h2>Función bloqueo</h2>
+<p>
+La función de bloqueo es designada para indicar a otros usuarios que un cierto documento
+está en proceso. Los usuarios que tienen permiso total a un documento pueden
+sin embargo invertir el bloqueo y proceder a una modificación del documento.
+</p>
+
+<h2>Notificaciones</h2>
+<p>
+Cada usuario puede solicitar notificación de documentos y carpetas.
+Añadiendo un fichero o carpeta a su lista de notificaciones hará que reciba un
+informe de transacciones de otros usuarios.
+</p>
+
+<p>
+Sólo el Administrador de un grupo puede decidir si entrar o no en la lista
+de informes de documentos y carpetas. Una vez incluido, las notificaciones llegan
+a todos los miembros del grupo.
+</p>
+
+<h2>Palabras clave y búsqueda</h2>
+<p>
+Cada documento permite la inclusión de una descripción y algunas palabras clave.
+Esta información es usada por la función de búsqueda.
+</p>
+<p>
+En el menú personal de cada usuario puede archivar un juego de palabras clave agrupadas por categorías,
+para rellenar más rápido durante la carga de documentos.
+</p>
+
+<p>
+Presionando el botón de búsqueda sin introducir ninguna palabra da acceso a la página de búsqueda avanzada.
+</p>
+
+
+<h2>Calendario</h2>
+
+<p>
+Hay tres vistas: por semana, mes y año. Los eventos son mostrados en el orden de su
+introducción en el calendario.
+</p>
+
+<p>
+Una vez introducidos, los eventos son públicos y visible para todos los usuarios. Sólo el administrador
+y quién ha introducido el evento pueden modificarlo posteriormente.
+</p>
+

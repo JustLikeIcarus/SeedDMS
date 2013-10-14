@@ -1,0 +1,522 @@
+/*    Copyright (C) 2006-2008 Malcolm Cowe
+*/
+body {
+	font-size: 76%;
+	font-family: sans-serif;
+}
+body.login {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.headingContainer {
+	background: #35566c url(img/blue-gradient.png) repeat-x bottom; 
+	border: 1px solid rgb(53,85,107);
+	position: relative;
+}
+/* IE6 Hack */
+* html .headingContainer {
+  position: relative;
+}
+.localNavContainer {
+	padding: 2px;
+	margin-bottom: 0.4em;
+	background: #35566c;
+	border: 1px solid rgb(53,85,107);
+	position: relative;
+}
+a:link {
+	color: rgb(231,111,0);
+	text-decoration: none;
+}
+a:visited {
+	color: rgb(231,111,0);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	color: rgb(231,111,0);
+	text-decoration: none;
+}
+.headingContainer a:link {
+	color: white;
+}
+.headingContainer a:visited {
+	color: white;
+}
+.localNavContainer a:link {
+	color: white;
+}
+.localNavContainer a:visited {
+	color: white;
+}
+.contentHeading a:link {
+	color: white;
+}
+.contentHeading a:visited {
+	color: white;
+}
+.localNav a:link {
+	text-decoration: none;
+}
+.localNav a:visited {
+	text-decoration: none;
+}
+.localNav a:hover {
+	text-decoration: underline;
+}
+.globalNav a:link {
+	color: rgb(192,102,0);
+	text-decoration: none;
+}
+.globalNav a:visited {
+	color: rgb(192,102,0);
+	text-decoration: none;
+}
+.globalNav a:hover {
+	color: rgb(192,102,0);
+	text-decoration: underline;
+}
+.globalNav a:active {
+	color: rgb(192,102,0);
+}
+.mainHeading {
+	padding: 2px 4px 0px 4px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: white;
+	position: absolute;
+	bottom: 0px;
+}
+/* IE6 Hack */
+* html .mainHeading {
+  position: relative;
+}
+.contentHeading {
+	background: #35566c url(img/blue-gradient.png) repeat-x bottom; 
+	color: white;
+	padding: 2px 4px 2px 4px;
+	margin-top: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.contentSubHeading {
+	font-weight: bold;
+	border-bottom: 1px solid;
+	margin-top: 1em;
+	margin-bottom: 2px;
+}
+.contentSubHeading#first {
+	margin-top: 0;
+	margin-bottom: 2px;
+}
+
+#logo {
+	float:left;
+	margin-right: 5px;
+}
+
+.siteName {
+	background: url(img/bg-global-tl.png) no-repeat top left;
+	padding: 2px 4px 2px 4px;
+	font-size: 1.6em;
+	font-weight: bold;
+	/*width: 40%; */
+}
+
+.siteNameLogin {
+	background: url(img/bg-global-tl.png) no-repeat top left;
+	padding: 2px 4px 0px 4px;
+	font-size: 3em;
+	font-weight: bold;
+	font-style: italic;
+	color: #fff;
+}
+.globalBox {
+	background: url(img/bg-global.png) repeat-x top left;
+	position: relative;
+	height: 4em;
+}
+
+/* IE6 Hack */
+* html .globalBox {
+  position: relative;
+}
+
+.globalBox#noNav {
+	height: 4em;
+}
+.globalBox div#signatory {
+	padding-left: 55px;
+	position: absolute;
+	bottom: 1px;
+}
+
+/* IE6 Hack */
+* html .globalBox div#signatory {
+  position: relative;
+}
+
+.globalNav {
+	padding: 4px;
+	list-style-type: none;
+	margin: 0px;
+	text-align: right;
+	float:right;
+}
+
+/* IE6 Hack */
+* html .globalNav {
+  position: relative;
+}
+
+.globalNav li {
+	display: inline;
+	padding: 0px 4px 0px 4px;
+	border-left: 1px solid;
+ }
+.globalNav li#first {
+	border-left: none;
+	padding: 0px 4px 0px 0px;
+}
+.globalNav li form {
+	display: inline;
+}
+.globalNav li input {
+	font-size: 0.8em;
+	border: 1px solid;
+	padding: 1px;
+}
+.globalNav li input#searchButton {
+	border-left:0px;
+	padding: 0px;
+}
+.localNav {
+	padding:1px;
+	margin: 0px;
+	text-align: center;
+	list-style-type: none;
+	text-align:left;
+	color: white;
+	text-transform: uppercase;
+}
+.localNav li {
+	display: inline;
+	padding: 0px 4px 0px 4px;
+	border-left: 1px solid;
+}
+.localNav li#first {
+	border-left: none;
+}
+.globalTR {
+	background: url(img/bg-global-tr.png) no-repeat top right;
+	float: right;
+	width: 8px;
+	height: 8px;
+}
+.smallText {
+	font-size: 0.8em;
+}
+.contentContainer {
+	padding: 0px;
+	width: 100%;
+	margin: auto;
+}
+.content {
+	background: url(img/content-gradient.png) repeat-x bottom left;
+	background-color: white;
+	margin-top: 0.2em;
+	padding: 0;
+	border-top: 1px solid #e0e0e0;
+}
+.content-l {
+	background: url(img/edge.png) repeat-y bottom left;
+}
+.content-r {
+	background: url(img/edge.png) repeat-y bottom right;
+}
+.content-br {
+	background: url(img/content-br.png) no-repeat bottom right;
+}
+.content-bl {
+	background: url(img/content-bl.png) no-repeat bottom left;
+	padding: 0.6em 1em;
+}
+.content input, .content select {
+	font-size: 0.8em;
+	border: 1px solid;
+}
+.content textarea {
+	border: 1px solid;
+	font-family: sans-serif;
+	font-size: 1.0em;
+}
+td {
+	vertical-align: top;
+}
+table.folderView {
+	border-collapse: collapse;
+	width: 100%;
+}
+table.folderView thead tr {
+	border-bottom: 1px solid rgb(189, 190, 192);
+}
+table.folderView th, table.folderView td {
+	padding: 0.1em 0.4em;
+}
+table.folderView th {
+	text-align: left;
+}
+table.folderView td {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+table.folderView td.center {
+	text-align: center;
+}
+table.folderView tr.folder {
+	border-bottom: 1px solid rgb(224, 224, 224);
+	background: rgb(240, 240, 240);
+}
+table.defaultView {
+	border-collapse: collapse;
+}
+table.defaultView thead tr {
+	border-bottom: 1px solid rgb(189, 190, 192);
+}
+table.defaultView th, table.defaultView td {
+	padding: 0.1em 0.4em;
+}
+table.defaultView th {
+	text-align: left;
+}
+table.defaultView td {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+table.defaultView td.center {
+	text-align: center;
+}
+table.defaultView tr.folder {
+	border-bottom: 1px solid rgb(224, 224, 224);
+	background: rgb(240, 240, 240);
+}
+td#userImage {
+	border: 1px solid rgb(189, 190, 192);
+}
+img.userImage {
+	height: 72px;
+}
+img.mimeicon {
+	height: 18px;
+	vertical-align: middle;
+	border: none;
+}
+img.treeicon {
+	border: none;
+	padding-right: 0.1em;
+}
+input.mimeicon {
+	height: 18px;
+	vertical-align: middle;
+	border: none;
+}
+ul.reviewer {
+	padding: 0;
+	margin: 0;
+}
+ul.reviewer li {
+	list-style: none;
+	padding: 0.1em 0em;
+	border-top: 1px solid rgb(163, 184, 203);
+}
+ul.reviewer li.first {
+	border-top: none;
+}
+ul.actions, ul.documentDetail {
+	padding: 0;
+	margin: 0;
+}
+ul.actions li, ul.documentDetail li {
+	list-style: none;
+	padding: 0 0 0.1em 0;
+}
+ul.actions li.first, ul.documentDetail li.first {
+	border-top: none;
+}
+dl.documentDetail {
+	margin: 0;
+}
+dl.documentDetail dt {
+	font-weight: bold;
+}
+.cbSelectTitle {
+	float:left;
+	width: 9em;
+}
+.cbSelectContainer {
+	overflow:auto;
+	height: 8em;
+	border: 1px solid;
+	padding: 0.2em 0;
+	margin: 0.2em 0;
+}
+.cbSelectContainer.empty {
+	height: 1em;
+}
+.cbSelectList {
+	padding: 0.1em;
+}
+.cbSelectItem {
+	list-style-type: none;
+}
+div.pageList{
+	border: 1px solid #ddd;
+	padding: 3px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+div.pageList span.selected{
+	font-weight: bold;
+	color: #fff;
+	background-color: #35566c;
+	padding: 1px;
+}
+/*
+ * I rather foolishly decided to have the title of the page exist at the
+ * bottom of the containing DIV element. This means using absolute
+ * positioning in order to get the desired effect in a way that is consistent.
+ * However, this causes problems when the fonts are scaled as overlap can
+ * occur with other elements, leading to unclean layout (since absolute
+ * positioning removes the element from the document flow). My solution is to
+ * place an empty element in the page directly before the title that remains
+ * in the document flow. This fakes a margin around the title.
+ * I've also applied this to the login form in the global navigation section.
+ */
+span.absSpacerNorm {
+  display: block;
+  height: 1.4em;
+  line-height: 14px;
+  font-size: 1.2em;
+}
+
+span.absSpacerTitle {
+  display: block;
+  min-height: 1.8em;
+  font-size: 1.5em;
+  padding-top: 0.2em;
+  visibility: hidden;
+}
+
+div.error {
+	text-align: center;
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 15px;
+	background-color: #ff8787;
+	font-weight: bold;
+}
+
+.disclaimer {
+	margin-top: 1em;
+	padding: 3px;
+	text-align: center;
+	border: 1px solid #000;
+}
+
+.footNote {
+	text-align: center;
+	margin-top: 1em;
+}
+.legend{
+	list-style: none;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+/* these are used in help only */
+
+h1{
+	font-size: 140%;
+	font-weight: bold;
+	background: #35566c;
+	color: #fff;
+}
+
+h2{
+	font-size: 110%;
+	font-weight: bold;
+	border-bottom: 1px solid #999;
+}
+/* these are used in calendar */
+
+table.calendaryear td.today{
+	border: 1px solid #000;
+	font-weight: bold;
+}
+
+table.calendaryear td.header{
+	font-weight: bold;
+}
+
+table.calendaryear td{
+	border: 1px solid #000;
+	padding : 10px;
+}
+
+table.calendaryear table td{
+	border: 0;
+	padding : 1px;
+}
+
+table.calendarmonth , table.calendarweek {
+	margin-top: 1em;
+}
+
+table.calendarmonth td, table.calendarweek td{
+	border-bottom: 1px solid #ddd;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+table.calendarmonth td.separator, table.calendarweek td.separator{
+	border: 0;
+	padding: 0;
+	margin:0;	
+}
+
+table.calendarmonth td.header, table.calendarmonth td.todayHeader, table.calendarweek td.header, table.calendarweek td.todayHeader{
+	border: 1px solid #000;
+	background: #eee;
+	font-weight: bold;
+	padding: 1px;
+	color: #222;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-bottom: 1em;
+}
+
+table.calendarmonth td.header a, table.calendarmonth td.todayHeader a, table.calendarweek td.header a, table.calendarweek td.todayHeader a{
+	color: #000;
+}
+
+
+table.calendarmonth td.today, table.calendarweek td.today{
+	background: #ddd;
+}
+
+table.calendarmonth td.todayHeader, table.calendarweek td.todayHeader,table.calendarmonth td.todayHeader a, table.calendarweek td.todayHeader a{
+	background: #000;
+	color: #eee;
+}
+
+table.calendarweek td.header, table.calendarweek td.todayHeader{
+ 	padding-bottom: 2em;
+}
+
+table.searchform td{
+	padding-top: 5px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}

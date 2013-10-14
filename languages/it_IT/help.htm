@@ -1,0 +1,191 @@
+<h1>Note generali</h1>
+
+<p>
+Un DMS (Document Management System) ha lo scopo di permettere la condivisione di documenti
+controllandone il flusso di lavoro, i permessi di accesso e l'organizzazione in generale.
+</p>
+
+<p>
+Tramite il menu di primo livello &egrave; possibile accedere ai vari documenti
+memorizzati:
+<ul>
+<li>Cartelle: permette di sfogliare i documenti come si farebbe con un normale file manager.
+<li>Documenti personali: presenta diverse voci per accedere rapidamente ai documenti di interesse personale:
+<ul>
+<li>Documenti in lavorazione: lista dei documenti in attesa di revisione o approvazione da parte dell'utente,
+dei documenti di propriet&agrave; dell'utente che attendono approvazione o revisione e dei documenti attualmente bloccati dall'utente.
+<li>Tutti i documenti: lista di tutti i documenti di propriet&agrave; dell'utente.
+<li>Dettaglio revisioni: lista tutti i documenti gi&agrave; revisionati o in attesa di revisione da parte dell'utente.
+<li>Dettaglio approvazioni: lista tutti i documenti gi&agrave; approvati o in attesa di approvazione da parte dell'utente.
+</ul>
+</ul>
+</p>
+
+<p>
+Il presente DMS mette a disposizione anche un calendario che ha la funzione di bacheca virtuale per condividere note,
+appuntamenti, scadenze ed impegni.
+</p>
+
+
+<h1>Permessi</h1>
+
+<p>
+L'utente autorizzato pu&ograve; stabilire se e come gli altri utenti del sistema
+potranno accedere alle varie cartelle e documenti presenti.
+</p>
+
+<h2>Livelli di permesso</h2>
+<p>
+I livelli di accesso possibili sono:
+<ul>
+<li>Permessi totali: l'utente pu&ograve; effettuare qualsiasi operazione.
+<li>Lettura e scrittura: l'utente pu&ograve; aggiornare documenti e aggiungere contenuti alle cartelle.
+<li>Solo lettura: l'utente pu&ograve; visualizzare il contenuto delle cartelle e scaricare i documenti.
+<li>Nessun accesso: non &egrave; possibile visualizzare il contenuto delle cartelle o i singoli documenti.
+</ul>
+</p>
+
+<p>
+Per default gli utenti amministratori hanno permessi di massimo livello su ogni documento e
+cartella del sistema. Analogamente il proprietario del documento ha permessi totali
+sui propri documenti.
+</p>
+
+<p>
+Solo gli utenti amministratori possono cambiare il proprietario di un documento.
+</p>
+
+<h2>Gestione dei permessi</h2>
+<p>
+Per ogni cartella o documento i permessi sono gestiti tramite due dispositivi
+diversi:
+<ul>
+<li>I permessi di default valgono in mancanza di ulteriori specifiche.
+<li>La lista dei permessi consente di specificare eccezioni ai permessi di default.
+</ul>
+</p>
+
+<h2>Permessi ereditari</h2>
+<p>
+I permessi di cartelle e documenti possono essere impostati come ereditari.
+In tal caso i documenti e le cartelle ereditano i medesimi permessi della cartella che li contiene.
+</p>
+
+
+<h1>Flusso di lavoro</h1>
+
+<p>
+Il sistema gestisce automaticamente il flusso di lavoro per ogni documento e memorizza
+variazioni, versionamento, commenti effettuati, ecc.
+</p>
+
+<h2>Ciclo di validazione dei documenti</h2>
+<p>
+Il normale flusso di lavoro prevede che, al caricamento di un nuovo documento o di una
+nuova versione, vengano indicati alcuni utenti o gruppi di utenti, a titolo
+di revisori e/o approvatori. Gli utenti indicati come revisori e approvatori sono
+tenuti ad esplicitare la propria approvazione al documento. Quando tale operazione
+viene ultimata, ovvero tutti gli utenti indicati hanno effettuato la propria
+revisione/approvazione, il documento passa nello stato di 'rilasciato'.
+</p>
+
+<p>
+L'utente revisore/approvatore pu&ograve; negare la propria approvazione al documento.
+In tal caso il documento passa nello stato di 'rifutato'.
+</p>
+
+<p>
+Un documento per il quale non vengano impostate revisioni e approvazioni assume
+immediatamente lo stato di 'rilasciato'.
+</p>
+
+<p>
+Come approvatori/revisori &egrave; possibile indicare anche gruppi di utenti. In tal caso
+si intende che la revisione/approvazione dovr&agrave; essere effettuata da uno qualsiasi degli utenti
+appartenenti al gruppo.
+</p>
+
+<p>
+L'utente proprietario del documento pu&ograve; in ogni momento modificare la lista dei revisori
+e degli approvatori.
+</p>
+
+<h2>Stato dei documenti</h2>
+<p>
+Gli stati possibili per un documento sono:
+<ul>
+<li>Bozza in attesa di approvazione: uno o pi&ugrave; degli approvatori indicati non ha ancora espresso la propria approvazione.
+<li>Bozza in attesa di revisione: uno o pi&ugrave; dei revisori indicati non ha ancora espresso la propria revisione.
+<li>Rilasciato: il documento ha terminato positivamente il proprio ciclo di validazione.
+<li>Rifiutato: il documento ha interrotto negativamente il proprio ciclo di validazione.
+<li>Scaduto: &egrave; stata superata la data limite per il completamento del ciclo di validazione del documento.
+<li>Obsoleto: lo stato di un documento rilasciato pu&ograve; essere modificato in obsoleto. Tale
+modifica &egrave; intesa come alternativa alla cancellazione dello stesso documento. Lo stato
+di obsoleto &egrave; reversibile.
+</ul>
+</p>
+
+<h2>Scadenza</h2>
+<p>
+Per ogni documento in lavorazione pu&ograve; essere impostata una data di scadenza.
+Una volta sorpassato il giorno impostato non sono pi&ugrave; possibili revisioni o approvazioni
+ed il documento passa nello stato di 'scaduto'.
+</p>
+
+<p>
+La scadenza viene considerata solo per l'ultima versione del documento
+ed ha effetto solo sui documenti in lavorazione.
+</p>
+
+
+<h1>Altre caratteristiche</h1>
+
+<h2>Funzione di blocco</h2>
+<p>
+La funzione di blocco ha lo scopo di segnalare agli altri utenti che un certo documento
+&egrave; in lavorazione. L'utente con permessi totali sul documento pu&ograve;
+comunque ignorare il blocco e procedere ad una modifica del documento.
+</p>
+
+<h2>Notifiche</h2>
+<p>
+Ogni utente pu&ograve; richiedere notifica su documenti e cartelle.
+Aggiungendo un documento o una cartella nella propria lista di notifiche si ricever&agrave;
+segnalazione delle operazioni effettuate da altri utenti.
+</p>
+
+<p>
+Solo il Manager di un gruppo pu&ograve; decidere se inserire o meno il gruppo nella lista
+di notifica di documenti e cartelle. Una volta inserito, le notifiche arrivano
+a tutti i membri del gruppo.
+</p>
+
+<h2>Parole chiave e ricerca</h2>
+<p>
+Ogni documento permette l'inserimento di una descrizione e di alcune parole chiave.
+Tali informazioni vengono utilizzate per la ricerca documenti.
+</p>
+<p>
+Nel men&ugrave; del proprio account personale ogni utente pu&ograve; memorizzare
+una serie di parole chiave raggruppate per categorie, in modo da velocizzarne
+la compilazione al momento del caricamento dei documenti.
+</p>
+
+<p>
+Premendo il pulsante di ricerca senza inserire alcuna parola si accede alla pagina
+di ricerca avanzata.
+</p>
+
+
+<h2>Calendario</h2>
+
+<p>
+Sono possibili tre viste: per settimana, per mese, per anno. Gli eventi sono
+visualizzati in ordine di inserimento nel calendario.
+</p>
+
+<p>
+Una volta inseriti, gli eventi sono pubblici e visibili a tutti. Solo l'amministratore
+e chi ha inserito l'evento possono modificarlo successivamente.
+</p>
+

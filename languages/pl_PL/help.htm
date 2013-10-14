@@ -1,0 +1,174 @@
+<h1>Uwagi ogólne</h1>
+
+<p>
+DMS (Document Management System) jest przeznaczony do udostępniania dokumentów,
+kontrolowania przepływu pracy, praw dostępu i organizacji w ogóle.
+</p>
+
+<p>
+Korzystając z menu pierwszego poziomu użytkownik może uzyskać dostęp do różnych informacji przechowywanych w systemie:
+<ul>
+<li>Zawartość: pozwala na przeglądanie dokumentów podobnie jak w menedżerze plików.
+<li>Moje dokumenty: zawierają kilka możliwości dostępu do dokumentów będących przedmiotem zainteresowania:
+<ul>
+<li>Dokumenty procesowane: wykazów dokumentów oczekujących na recenzję lub zatwierdzenia przez użytkownika, 
+dokumenty należące do użytkownika, które czekają na zatwierdzenie lub recenzję, dokumenty zablokowane przez użytkownika.
+<li>Wszystkie dokumenty: wykaz wszystkich dokumentów należących do użytkownika.
+<li>Podsumowanie opiniowania: wykaz wszystkich dokumentów, które zostały sprawdzone lub oczekują na sprawdzenie przez użytkownika.
+<li>Podsumowanie akceptacji: wykaz wszystkich dokumentów, które zostały zaakceptowane lub oczekują na akceptację przez użytkownika.
+</ul>
+</ul>
+</p>
+
+<p>
+Ten DMS oferuje także kalendarz, którego można użyć jako wirtualnej tablicy do dzielenia się notatkami, 
+terminami i zobowiązaniami.
+</p>
+
+
+<h1>Uprawnienia</h1>
+
+<p>
+Uprawnieni użytkownicy mogą decydować czy i w jaki sposób pozostali użytkownicy będą mieli dostęp do poszczególnych katalogów i znajdujących się w nich dokumentów.
+</p>
+
+<h2>Poziomy uprawnień</h2>
+<p>
+Możliwe poziomy dostępu to:
+<ul>
+<li>Wszystkie prawa: użytkownik może wykonać każdą operację.
+<li>Czytanie i pisanie: użytkownik może aktualizować dokumenty i dodawać pliki do katalogów.
+<li>Tylko odczyt: użytkownik może przeglądać zawartość katalogów i pobierać dokumenty.
+<li>Brak dostępu: użytkownik nie może przeglądać zawartości katalogów lub pojedyńczych dokumentów.
+</ul>
+</p>
+
+<p>
+Domyślnie administratorzy mają wszystkie uprawnienia dla każdego katalogu i pliku w systemie. 
+Podobnie właściciel dokumentu ma wszystkie uprawnienia dla jego dokumentów.
+</p>
+
+<p>
+Wyłącznie administratorzy mogą zmieniać właścicieli dokumentów.
+</p>
+
+<h2>Zarządzanie uprawnieniami</h2>
+<p>
+Dla każdego katalogu lub dokumentu można zarządzać uprawnieniami na dwa sposoby.
+<ul>
+<li>Jeśli nie zostanie to zmienione, obowiązują domyślne uprawnienia
+<li>Lista uprawnień pozwala określić wyjątki od uprawnień domyślnych
+</ul>
+</p>
+
+<h2>Dziedziczenie dostępu</h2>
+<p>
+Uptawnienia do katalogów i dokumentów można ustawić jako dziedziczne.
+W takim przypadku dokumenty i katalogi dziedziczą uprawnienia od katalogu, w którym się znajdują.
+</p>
+
+
+<h1>Przepływ dokumentów</h1>
+
+<p>
+System automatycznie zajmuje się kontrolą przepływu dla każdego dokumentu i zapisuje
+zmiany w dokumentach, zmiany wersji, komentarze użytkowników, itp.
+</p>
+
+<h2>Cykl sprawdzania poprawności</h2>
+<p>
+Domyślnie kontrola przepływu dokumentów wymaga aby, podczas ładowania nowego dokumentu lub
+nowej wersji, wskazać niektórych użytkowników lub grupy użytkowników, jako recenzentów i / lub zatwierdzających.
+Użytkownicy wskazani jako recenzenci i zatwierdzający mają obowiązek wytłumaczenia swoich decyzji odnośnie zatwierdzenia dokumentu.
+Kiedy proces się zakończy, czyli wszyscy wskazani użytkownicy wyrażą swoją opinię co do akceptacji dokumentu, status dokumentu zostanie zmieniony na "Zatwierdzony".
+</p>
+
+<p>
+Recenzenci i osoby akceptujące mogą nie zatwierdzić nowego dokumentu. Wtedy status dokumentu zmieni się na "Odrzucony".
+</p>
+
+<p>
+Dokument, który nie został skierowany do recenzji lub akceptacji, automatycznie ozaczony jest jako "Zatwierdzony".
+</p>
+
+<p>
+Jako recenzentów lub akceptujących można wskazać grupę użytkowników. W takim przypadku recenzja/apceptacja powinna zostać wykonana przez jedną, dowolną osobę należącą do wskazanej grupy.
+</p>
+
+<p>
+Właściciel dokumentu może w każdej chwili zmienić listę recenzentów / zatwierdzających.
+</p>
+
+<h2>Stan dokumentów</h2>
+<p>
+Możliwe stany dla dokumentów to:
+<ul>
+<li>Szkic - w oczekiwaniu na akceptację: jedna lub więcej próśb o akceptacjię nie zostały jeszcze wykonane.
+<li>Szkic - w oczekiwaniu na recenzję: jedna lub więcej próśb o opinię nie zostały jeszcze wykonane.
+<li>Zatwierdzony: dokument pomyślnie przeszedł cykl zatwierdzania.
+<li>Odrzucony: proce zatwierdzania dokumentu został zakończony.
+<li>Wygasłe: przekroczony został ostateczny termin w którym dokument mógł zostać zatwierdzony.
+<li>Zdezaktualizowany: dodatkowy status dla zatwierdzonych dokumentów. Jest to alternatywa dla usuwania dokumentów. 
+Status ten może być cofnięty.
+</ul>
+</p>
+
+<h2>Wygaśnięcie</h2>
+<p>
+Dla każdego gokumentu znajdującego się w trakcie procesowania można ustawić datę zakończenia.
+Kiedy ta data upłynie, nie będzie już można zmieniać stanu akceptacji i recenzji dokumentu, 
+a stan dokumentu zmieni się na "Wygasły".
+</p>
+
+<p>
+Ostateczny termin odnosi się tylko do najnowszej wersji dokumentu i jest brany pod uwagę tylko w procesie przetwarzania dokumentów.
+</p>
+
+
+<h1>Pozostałe funkcje</h1>
+
+<h2>Funkcja blokowania</h2>
+<p>
+Funkcja blokowania została zaprojektowana do powiadamiania pozostałych użytkowników, że dany dokument 
+jest aktualnie przetwarzany. Użytkownicy posiadający wszystkie uprawnienia dla danego dokumentu mogą odblokować dokument
+i wprowadzać do niego modyfikacjie.
+</p>
+
+<h2>Powiadomienia</h2>
+<p>
+Każdy użytkownik może włączyć powiadomienia dla dokumentów i katalogów.
+Każda zmiana dokumencie lub katalogu znajdującym się na liście powiadomień będzie skutkowała 
+wysłaniem powiadomienia zawierającego opis przeprowadzonej zmiany.
+</p>
+
+<p>
+Tylko kierownik grupy może zdecydować czy umieścić grupę na liście powiadomień dla dokumentów lub katalogów.
+Jeśli to zrobi, powiadomienia będą wysyłane do wszystkich użytkowników należących do danej grupy.
+</p>
+
+<h2>Słowa kluczowe i wyszukiwanie</h2>
+<p>
+Każdy dokument pozwala na dołączenie do niego opisu oraz słów kluczowych.
+Te informacje są wykorzystywane podczas wyszukiwania dokumentów.
+</p>
+<p>
+W zakładce "Moje konto", każdy użytkownik może zapisać pakiet słów kluczowych poukładanych w kategorie,
+dzięki czemu można przyspieszyć wypełnianie opisów podczas dodawania nowych dokumentów.
+</p>
+
+<p>
+Wciśnięcie przycisku bez wprowadzenia jakiegokolwiek słowa przeniesie użytkownika na stronę wyszukiwania zaawansowanego.
+</p>
+
+
+<h2>Kalendarz</h2>
+
+<p>
+Istnieją trzy widoki kalendarza: tygodniowy, miesięczny, roczny. Wydarzenia są wyświtlna w kolejności ich dodawania do kalendarza.
+</p>
+
+<p>
+Po dodaniu zdarzenia staje się ono publiczne i widoczne dla wszystkich.
+Jedynie administrator i osoba, która dodała zdarzenie, może je później edytować.
+</p>
+

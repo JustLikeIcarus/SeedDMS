@@ -1,0 +1,143 @@
+This README was written by Eric Smith
+
+======================================================
+Steps that I took to install SeedDMS on Ubuntu 12.10
+- a personal account and not an authoritative guide.
+======================================================
+
+Download four tar balls from;
+http://sourceforge.net/projects/seeddms/files/seeddms-4.0.0-pre5/
+
+seeddms-4.0.0-pre5.tar.gz
+SeedDMS_Preview-1.0.0.tgz
+SeedDMS_Lucene-1.1.1.tgz
+SeedDMS_Core-4.0.0pre5.tgz
+
+Install as follows the pear components:
+sudo pear install SeedDMS_Core-4.0.0pre5.tgz
+sudo pear install SeedDMS_Preview-1.0.0.tgz
+sudo pear install SeedDMS_Lucene-1.1.1.tgz
+
+Download and install the pear Log application:
+wget http://download.pear.php.net/package/Log-1.12.7.tgz
+sudo pear install Log-1.12.7.tgz
+
+And zend:
+sudo pear channel-discover zend.googlecode.com/svn
+sudo pear install zend/zend
+
+I installed the following packages, not all of which may be required
+and you may require other packages, please check the dependencies on
+the README.md for example for full text search, you need pdftotext,
+catdoc, xls2csv or scconvert, cat, id3 
+
+sudo apt-get install php5-mysql php5-mysqlnd libapache2-mod-php5
+sudo apt-get install pdo_mysql php5-gd id3 scconvert
+sudo apt-get install php-http-webdav-server
+sudo apt-get install zend-framework zend-framework-bin
+sudo apt-get install libzend-framework-zendx-php
+sudo apt-get install libjs-dojo-core libjs-dojo-dijit libjs-dojo-dojox
+sudo apt-get install libzend-framework-php (It kept bitching about Zend so I just kept piling on packages until it worked)
+
+mbstring is already a part of libapache2-mod-php5
+pepper:~> show libapache2-mod-php5|grep mbstring
+ mbstring mhash openssl pcre Phar posix Reflection session shmop SimpleXML
+ 
+
+Define three locations:
+[1] Some cosy place in yourfile system for the source files to which you
+will link
+I chose "/opt/seeddms-4.0.0-pre5/"
+untar seeddms-4.0.0-pre5.tar.gz into this location
+
+[2] Make a directory and three subdirectories for the data for your site;
+I chose to do this under "/opt/dms/seeddms_multisite_test/data"
+sudo mkdir -p /opt/dms/seeddms_multisite_test/data/lucene/
+sudo mkdir /opt/dms/seeddms_multisite_test/data/staging/
+sudo mkdir /opt/dms/seeddms_multisite_test/data/cache/
+
+Give ownership (or write access) to your httpd process to those directories;
+sudo chown -cvR  www-data  /opt/dms/seeddms_multisite_test/data/
+
+[3] Somewhere under your www root, make a directory for the sources of
+your site:
+These can be of course under different virtual domains.
+/var/www/www.mydomain.eu/seeddms_multisite_test 
+cd /var/www/www.mydomain.eu/seeddms_multisite_test; 
+sudo ln -s /opt/seeddms-4.0.0-pre5 src (README.md does not include the `src'!)
+ln -s src/inc inc
+ln -s src/op op
+ln -s src/out out
+ln -s src/js js
+ln -s src/views views
+ln -s src/languages languages
+ln -s src/styles styles
+ln -s src/themes themes
+ln -s src/install install
+ln -s src/index.php index.php
+
+If need be;
+sudo chown -cvR  www-data /var/www/www.mydomain.eu/seeddms_multisite_test/
+
+Create Dataabse;
+Run the following sql commands to create your db and a user with
+appropriate privileges.
+
+mysql> create database seeddms_multisite_test;
+mysql> grant all privileges on seeddms_multisite_test.* to seeddms@localhost identified by 'your_passwd';
+
+
+Point your browser to the  location of your instance as in [3] above
+and /install
+I resorted to a text browser on my server due to failure to access the
+db from a remote browser;
+
+pepper:~> elinks www.mydomain.eu/seeddms_multisite_test/install
+
+This is how I filled it in;
+                                                            SeedDMS: INSTALL
+   SeedDMS Installation for version 4.0.0
+
+   Server settings
+   Root directory:                /opt/seeddms-4.0.0-pre5/_______________________
+   Http Root:                     /seeddms_multisite_test/_______________________
+   Content directory:             /opt/dms/seeddms_multisite_test/data___________
+   Directory for full text index: /opt/dms/seeddms_multisite_test/data/lucene/___
+   Directory for partial uploads: /opt/dms/seeddms_multisite_test/data/staging/__
+   Core SeedDMS directory:        _______________________________________________
+   Lucene SeedDMS directory:      _______________________________________________
+   Extra PHP include Path:        _______________________________________________
+   Database settings
+   Database Type:                 mysql________________
+   Server name:                   localhost____________
+   Database:                      seeddms_multisite_tes
+   Username:                      seeddms______________
+   Password:                      ********_____________
+   Create database tables:        [X]
+
+   [ Apply ]
+
+
+If all is okay (and I hope this happens more quickly for you than for me),
+you should be notified accordingly and invited to login to your new site
+with credentials admin/admin. (This password is cleverly set to expire
+in a couple of days. So do not get a shock like I did when it suddenly
+does not work).
+
+-------------------------------------------------------------------------------
+
+To make additional sites;
+
+If you wish to make additional sites, you need to copy the data directories thusly;
+sudo cp -avr  /opt/dms/seeddms_multisite_test /opt/dms/seeddms_multisite_test_2
+And the sources thusly;
+sudo cp -avr /var/www/www.mydomain.eu/seeddms_multisite_test /var/www/www.mydomain.eu/seeddms_multisite_test_2
+
+And of course make data directories for this site:
+sudo mkdir -p /opt/dms/seeddms_multisite_test_2/data/lucene/
+sudo mkdir /opt/dms/seeddms_multisite_test_2/data/staging/
+sudo mkdir /opt/dms/seeddms_multisite_test_2/data/cache/
+
+Then create another database as shown above but of course give the db
+another name.
+Run the install again from the new location.

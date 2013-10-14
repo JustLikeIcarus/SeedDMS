@@ -1,0 +1,556 @@
+/*    Copyright (C) 2010 Matteo Lucarelli
+*/
+body {
+	font-size: 70%;
+	font-family: sans-serif;
+}
+body.login {
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.headingContainer {
+	background:  #fff; 
+	position: relative;
+}
+/* IE6 Hack */
+* html .headingContainer {
+  position: relative;
+}
+.localNavContainer {
+	padding: 2px;
+	margin-bottom: 0.4em;
+	background:  #fff; 
+	position: relative;
+}
+a:link {
+	color: rgb(150,50,0);
+	text-decoration: none;
+}
+a:visited {
+	color: rgb(150,50,0);
+	text-decoration: none;
+}
+a:hover {
+	color: rgb(231,111,0);
+	text-decoration: none;
+}
+a:active {
+	color: rgb(150,50,0);
+	text-decoration: none;
+}
+
+.mainHeading {
+	padding: 2px 4px 0px 4px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: black;
+	position: absolute;
+	bottom: 0px;
+}
+/* IE6 Hack */
+* html .mainHeading {
+  position: relative;
+}
+.contentHeading {
+	background:  #7d8288;
+	color: white;
+	padding: 2px 4px 2px 4px;
+	margin-top: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.contentSubHeading {
+	font-weight: bold;
+	border-bottom: 1px solid;
+	margin-top: 1em;
+	margin-bottom: 2px;
+}
+.contentSubHeading#first {
+	margin-top: 0;
+	margin-bottom: 2px;
+}
+
+#logo {
+	float:left;
+	margin-right: 5px;
+}
+
+.siteName {
+	background: url(img/bg-global-tl.png) no-repeat top left;
+	padding: 2px 4px 0px 4px;
+	font-size: 1.6em;
+	font-weight: bold;
+	font-style: italic;
+	color: #fff;
+}
+
+.siteNameLogin {
+	background: url(img/bg-global-tl.png) no-repeat top left;
+	padding: 2px 4px 0px 4px;
+	font-size: 3em;
+	font-weight: bold;
+	font-style: italic;
+	color: #fff;
+}
+
+.globalBox {
+	background: url(img/bg-global.png) repeat-x top left;
+	position: relative;
+	height: 4em;
+}
+
+/* IE6 Hack */
+* html .globalBox {
+  position: relative;
+}
+
+.globalBox#noNav {
+	height: 4em;
+}
+
+div#signatory {
+	padding-left: 55px;
+	position: absolute;
+	bottom: 1px;
+}
+
+/* IE6 Hack */
+* html .globalBox div#signatory {
+  position: relative;
+}
+
+.globalNav {
+	padding: 4px;
+	list-style-type: none;
+	margin: 0px;
+	text-align: right;
+	float:right;	
+	/*font-variant: small-caps;*/
+}
+
+/* IE6 Hack */
+* html .globalNav {
+  position: relative;
+}
+
+.globalNav li {
+	display: inline;
+	padding: 0px 4px 0px 4px;
+	border-left: 1px solid;
+ }
+.globalNav li#first {
+	border-left: none;
+	padding: 0px 4px 0px 0px;
+}
+.globalNav li form {
+	display: inline;
+}
+.globalNav li input {
+	font-size: 0.8em;
+	border: 1px solid;
+	padding: 1px;
+}
+.globalNav li input#searchButton {
+	border-left:0px;
+	padding: 0px;
+}
+.localNav {
+	padding:1px;
+	margin: 0px;
+	margin-top: 3px;
+	text-align: left;
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+}
+.localNav li {
+	font-size: 0.8em;
+	display: inline;
+	padding: 2px 4px 2px 4px;
+	border: 1px solid #fff;
+	background-color: #eee;
+}
+
+.globalTR {
+	background: url(img/bg-global-tr.png) no-repeat top right;
+	float: right;
+	width: 8px;
+	height: 8px;
+}
+.smallText {
+	font-size: 0.8em;
+}
+.contentContainer {
+	padding: 0px;
+	width: 100%;
+	margin: auto;
+}
+.content {
+	background: url(img/content-gradient.png) repeat-x bottom left;
+	background-color: white;
+	padding: 0;
+	border-top: 1px solid #e0e0e0;
+}
+.content-l {
+	background: url(img/edge.png) repeat-y bottom left;
+}
+.content-r {
+	background: url(img/edge.png) repeat-y bottom right;
+}
+.content-br {
+	background: url(img/content-br.png) no-repeat bottom right;
+}
+.content-bl {
+	background: url(img/content-bl.png) no-repeat bottom left;
+	padding: 0.6em 1em;
+}
+.content input, .content select {
+	font-size: 1em;
+}
+
+.content textarea {
+	border: 1px solid;
+	font-family: sans-serif;
+	font-size: 1em;
+}
+td {
+	vertical-align: top;
+}
+
+table.userView {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table.userView th {
+	text-align: left;
+}
+
+ul.groupView{
+	list-style: none;
+	font-weight: bold;
+}
+
+ul.groupView ul{
+	margin-top: 5px;
+	margin-bottom: 20px;
+	border-top: 1px solid #000;
+	list-style-image:url("../../out/images/usericon.gif");
+	font-weight: normal;
+}
+
+#tree-open{
+	width: 25%;
+}
+
+#tree-open ul{
+	margin-left: 0px;
+	padding: 0;
+	padding-left:15px;
+}
+
+#tree-closed{
+	width: 20px;
+}
+
+table.folderView {
+	border-collapse: collapse;
+	width: 100%;
+}
+table.folderView thead tr {
+	border-bottom: 1px solid rgb(189, 190, 192);
+}
+table.folderView th, table.folderView td {
+	padding: 0.1em 0.4em;
+}
+table.folderView th {
+	text-align: left;
+}
+
+table.folderView td {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+table.folderView tr.folder {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+table.defaultView {
+	border-collapse: collapse;
+}
+table.defaultView thead tr {
+	border-bottom: 1px solid rgb(189, 190, 192);
+}
+table.defaultView th, table.defaultView td {
+	padding: 0.1em 0.4em;
+}
+table.defaultView th {
+	text-align: left;
+}
+table.defaultView td {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+table.defaultView td.center {
+	text-align: center;
+}
+table.defaultView tr.folder {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+td#userImage {
+	border: 1px solid rgb(189, 190, 192);
+}
+img.userImage {
+	height: 72px;
+}
+img.mimeicon {
+	height: 18px;
+	vertical-align: middle;
+	border: none;
+}
+img.treeicon {
+	border: none;
+	padding-right: 0.1em;
+}
+span.selectedfoldertree{
+	font-weight: bold;
+}
+
+input.mimeicon {
+	height: 18px;
+	vertical-align: middle;
+	border: none;
+}
+ul.reviewer {
+	padding: 0;
+	margin: 0;
+}
+ul.reviewer li {
+	list-style: none;
+	padding: 0.1em 0em;
+}
+
+ul.reviewer li.first {
+	border-top: none;
+}
+ul.actions {
+	padding: 0;
+	margin: 0;
+}
+form ul.actions li {
+	list-style: none;
+	padding: 0 0 0.1em 0;
+}
+ul.actions li {
+	list-style: none;
+	padding: 0 0 0.1em 0;
+}
+
+ul.actions li img{
+	padding: 3px;
+}
+
+ul.documentDetail {
+	margin: 0;
+	padding:0;
+	font-size: 0.8em;
+	list-style: none;
+}
+
+.cbSelectTitle {
+	float:left;
+	width: 9em;
+}
+.cbSelectContainer {
+	overflow:auto;
+	height: 6em;
+	width: 30em;
+	border: 1px solid #777;
+	margin-bottom: 3px;
+}
+.cbSelectContainer.empty {
+	height: 1em;
+}
+.cbSelectList {
+	margin:0;
+	padding: 0.1em;
+}
+.cbSelectItem {
+	list-style-type: none;
+}
+
+div.pageList{
+	border: 1px solid #ddd;
+	padding: 3px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+div.pageList span.selected{
+	font-weight: bold;
+	color: #fff;
+	background-color: #7d8288;
+	padding: 1px;
+}
+
+/*
+ * I rather foolishly decided to have the title of the page exist at the
+ * bottom of the containing DIV element. This means using absolute
+ * positioning in order to get the desired effect in a way that is consistent.
+ * However, this causes problems when the fonts are scaled as overlap can
+ * occur with other elements, leading to unclean layout (since absolute
+ * positioning removes the element from the document flow). My solution is to
+ * place an empty element in the page directly before the title that remains
+ * in the document flow. This fakes a margin around the title.
+ * I've also applied this to the login form in the global navigation section.
+ */
+span.absSpacerNorm {
+  display: block;
+  height: 1.4em;
+  line-height: 14px;
+  font-size: 1.2em;
+}
+
+span.absSpacerTitle {
+  display: block;
+  min-height: 1.8em;
+  font-size: 1.5em;
+  padding-top: 0.2em;
+  visibility: hidden;
+}
+
+.disclaimer {
+	margin-top: 1em;
+	padding: 3px;
+	text-align: center;
+	border: 1px solid #000;
+}
+
+.footNote {
+	text-align: center;
+	margin-top: 1em;
+}
+
+.warning{
+	font-weight: bold;
+	padding:0.1em;
+	border: 1px solid rgb(255,0,0);
+}
+
+.install_warning{
+	margin: 20px;
+	padding: 10px;
+	background: #fa0;
+	color: #fff;
+	font-weight: bold;
+	font-size: 120%;
+}
+.error, .install_error{
+	margin: 20px;
+	padding: 10px;
+	background: #f00;
+	color: #fff;
+	font-weight: bold;
+	font-size: 120%;
+}
+.legend{
+	list-style: none;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+pre{
+	font-size: 140%;
+}
+
+/* these are used in help only */
+
+h1{
+	font-size: 140%;
+	font-weight: bold;
+	background: #7d8288;
+	color: #fff;
+	padding-left: 5px;
+}
+
+h2{
+	font-size: 110%;
+	font-weight: bold;
+	border-bottom: 1px solid #999;
+}
+
+/* these are used in calendar */
+
+table.calendaryear td.today{
+	border: 1px solid #7d8288;
+	font-weight: bold;
+}
+
+table.calendaryear td.header{
+	font-weight: bold;
+	color: #444;
+}
+
+table.calendaryear td{
+	border: 1px solid #000;
+	padding : 10px;
+}
+
+table.calendaryear table td{
+	border: 0;
+	padding : 1px;
+}
+
+table.calendarmonth , table.calendarweek {
+	margin-top: 1em;
+}
+
+table.calendarmonth td, table.calendarweek td{
+	border-bottom: 1px solid #ddd;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+table.calendarmonth td.separator, table.calendarweek td.separator{
+	border: 0;
+	padding: 0;
+	margin:0;	
+}
+
+table.calendarmonth td.header, table.calendarmonth td.todayHeader, table.calendarweek td.header, table.calendarweek td.todayHeader{
+	border: 1px solid #7d8288;
+	background: #eee;
+	font-weight: bold;
+	padding: 1px;
+	color: #222;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-bottom: 1em;
+}
+
+table.calendarmonth td.header a, table.calendarmonth td.todayHeader a, table.calendarweek td.header a, table.calendarweek td.todayHeader a{
+	color: #000;
+}
+
+
+table.calendarmonth td.today, table.calendarweek td.today{
+	background: #eee;
+}
+
+table.calendarmonth td.todayHeader, table.calendarweek td.todayHeader,table.calendarmonth td.todayHeader a, table.calendarweek td.todayHeader a{
+	background: #7d8288;
+	color: #fff;
+}
+
+table.calendarweek td.header, table.calendarweek td.todayHeader{
+ 	padding-bottom: 2em;
+}
+
+table.searchform td{
+	padding-top: 5px;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+
+div.logview{
+	overflow:auto;
+	font-size: 80%;
+}

@@ -1,0 +1,24 @@
+LetoDMS is now SeedDMS
+======================
+
+I had to change the name of LetoDMS and took SeedDMS. It is a smooth
+continuation of LetoDMS. This initial version of SeedDMS will be able
+to update all former versions of LetoDMS back to 3.0.0.
+
+Run object check after upgrade
+==============================
+
+Once you have finished upgrading, you should log in as admin and run
+the document and folder check. It will set the new database fields
+for the checksum and filesize of a document version.
+
+Upgrading to new workflow engine
+================================
+
+If you decide to turn on the new workflow mode, then all your current
+approvals and reviews will become invisible. They will not be deleted
+but there is no way to access them anymore unless you switch back to
+traditional mode. You can easily modell the old workflow with the new
+workflow engine, but have to set up the transitions, states and actions
+yourself. Please make sure there are no documents left with a pending
+review or approval.

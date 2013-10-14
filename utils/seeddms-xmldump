@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/php -f /usr/share/seeddms/utils/xmldump -- $*

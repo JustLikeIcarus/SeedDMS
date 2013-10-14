@@ -1,0 +1,184 @@
+<h1>General Notes</h1>
+
+<p>
+A DMS (Document Management System) is designed to share documents,
+controlling the workflow, access permissions and organization in general.
+</p>
+
+<p>
+Using the first level menu the user can access the various information stored in the system:
+<ul>
+<li>Content: allows you to browse documents in a file manager style.
+<li>My documents: has several entries to access documents of interest:
+<ul>
+<li>Documents in process: lists of documents awaiting review or approval by the user,
+documents owned by the user who await approval or revision, documents locked by the user.
+<li>All documents: list of all documents owned by the user.
+<li>Review summary: list all the documents that were reviewed or awaiting review by the user.
+<li>Approval summary: list all the documents that were approved or awaiting approval by the user.
+</ul>
+</ul>
+</p>
+
+<p>
+This DMS  also provides a calendar that serves as virtual bulletin board to share notes,
+appointments, deadlines and commitments.
+</p>
+
+
+<h1>Permissions</h1>
+
+<p>
+Authorized users can set if and how other users will access to various folders
+and documents submitted.
+</p>
+
+<h2>Permission levels</h2>
+<p>
+The possible access-levels are:
+<ul>
+<li>Total permits: the user can perform any operation.
+<li>Reading and writing: the user can update records and add content to the folders.
+<li>Read only: the user can view the contents of folders and download documents.
+<li>No Access: the user cannot view the contents of the folders or individual documents.
+</ul>
+</p>
+
+<p>
+By default administrators have total permissions on each document and folder
+on the system. Similarly, the document owner has total permits on his documents.
+</p>
+
+<p>
+Only administrator users can change the owner of a document.
+</p>
+
+<h2>Permissions management</h2>
+<p>
+For each folder or document permissions are managed through two different devices
+<ul>
+<li>The default permissions are valid in the absence of further specific
+<li>The list of permissions allows you to specify exceptions to the default permissions
+</ul>
+</p>
+
+<h2>Access inheritance</h2>
+<p>
+The permissions of folders and documents can be set as hereditary.
+In this case the files and folders inherit the same permissions of the folder
+that contains them.
+</p>
+
+
+<h1>Documents workflow</h1>
+
+<p>
+The system automatically handles the workflow for each document and stores
+changes, versioning, comments made, etc.
+</p>
+
+<h2>Validation cycle</h2>
+<p>
+The normal workflow requires, when loading a new document or a
+new version, to indicate some users or groups of users as reviewers and/or approvers.
+Users that are listed as reviewers and approvers are
+required to explain their approval to the document. When this operation
+is completed, thus all listed users have made their
+review/approval, the state of the document will set to 'released'.
+</p>
+
+<p>
+The reviewer/approver can deny its approval to the document.
+In this case the document state is set to 'rejected'.
+</p>
+
+<p>
+A doc that are not set reviewers and approvals take immediately the state of 'released'.
+</p>
+
+<p>
+As approvers/reviewers one can indicate groups of users. In this case the
+review/approval should be made by any of the users belonging to the group.
+</p>
+
+<p>
+The document owner may at any time amend the list of reviewers/approvers.
+</p>
+
+<h2>Documents status</h2>
+<p>
+Possible states for a document are:
+<ul>
+<li>Draft pending approval: one or more of the approvals referred to have not yet expressed their approval.
+<li>Draft pending review: one or more of the listed reviewer have not yet expressed their review.
+<li>Released: the document has successfully completed its validation cycle.
+<li>Rejected: the document has discontinued its validation cycle.
+<li>Expired: you have exceeded the target date for completion of the validation of the document.
+<li>Obsolete: the status of a released document can be changed to obsolete. This
+is intended as an alternative to the cancellation of the document. Obsolete state
+is reversible.
+</ul>
+</p>
+
+<h2>Expiration</h2>
+<p>
+For each document in production can be set a due date.
+Once passed the day set are no longer possible revisions or approvals
+and the document goes into an 'expired' state.
+</p>
+
+<p>
+The deadline is considered only for the latest version of the document
+and has effect only on document processing.
+</p>
+
+
+<h1>Other features</h1>
+
+<h2>Lock function</h2>
+<p>
+Lock function is designed to indicate to other users that a certain document
+is in process. Users having total permission on the document can
+however reverse the lock and proceed to a modification of the document.
+</p>
+
+<h2>Notifications</h2>
+<p>
+Each user can request notification on documents and folders.
+Adding a file or folder in your list of notifications you will receive
+reporting of transactions by other users.
+</p>
+
+<p>
+Only the Manager of a group can decide whether or not to enter the group list
+reporting on documents and folders. Once inserted, the notifications come
+all members of the group.
+</p>
+
+<h2>Keywords and search</h2>
+<p>
+Each document allows the inclusion of a description and some keywords.
+These informations are used for research function.
+</p>
+<p>
+In personal account menu each user can store a set of keywords grouped by categories,
+in order to speed filling during the loading of documents.
+</p>
+
+<p>
+Pressing the search button without entering any word you access the advanced research page.
+</p>
+
+
+<h2>Calendar</h2>
+
+<p>
+There are three views: by week, month, year. Events are displayed in order of their
+insertion in the calendar.
+</p>
+
+<p>
+Once inserted, the events are public and visible to everyone. Only the administrator
+and who has entered the event can modify it later.
+</p>
+

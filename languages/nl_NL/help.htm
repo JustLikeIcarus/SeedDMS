@@ -1,0 +1,184 @@
+<h1>Algemeent</h1>
+
+<p>
+Een DMS (Document Management Systeem) is ontwikkeld om documenten te beheren,
+te delen, de workflow te controleren, toegang tot die documenten en de
+werkzaamheden m.b.t. de documenten te beheren.
+</p>
+
+<p>
+Het eerste niveau van het menu geeft de gegbruiker toegang tot de informatie die is opgeslagen in het DMS:
+<ul>
+<li>Home: Geeft U de mogelijkheid om middels een mappenstructuur naar de bestanden te navigeren.
+<li>Mijn Documenten: Stelt U in staat om documenten, afhankelijk van hun status, te benaderen
+<ul>
+<li>Documenten die wachten op uw Controle: Lijst van documenten die U als functionaris moet controleren.
+<li>Documenten die wachten op uw goedkeuring: Lijst van documenten die U als functionaris moet goedkeuren.
+<li>Eigen documenten die (nog) aandacht behoeven: Lijst van al uw eigen documenten, die in behandeling zijn.
+</ul>
+</ul>
+</p>
+
+<p>
+Het DMS bevat tevens een Kalender functie, die ook dienst kan doen als viritueel Bulleting Board,
+zodat U aantekeningen, deadlines en afspraken kunt delen.
+</p>
+
+
+<h1>Machtigingen</h1>
+<p>
+Gebruikers kunnen niet alleen op toegang worden geautoriseerd maar, kunnen ook machtigingen krijgen voor het
+controleren en goedkeuren van documenten.
+</p>
+
+<h2>Machtigingen niveaus</h2>
+<p>
+Het DMS kent de volgende machtigingen niveaus
+<ul>
+<li>Alle: De gebruiker kan alle opties uitvoeren (Admin)
+<li>Lees en schrijf rechten: De grbuiker kan records bijwerken en content toevoegen aan de mappen/folders.
+<li>Alleen lezen: De gebruiker kan Content en mappen/folders bekijken. Hij/zij kan ook bestanden uit het DMS downloaden.
+<li>Geen toegang: De gebruiker kan de documenten en/of de mappen/folders niet bekijken.
+</ul>
+</p>
+
+<p>
+Standaard heeft de Administrator alle machtigingen over de aangemaakte mappen en documenten.
+De document eigenaar heeft alle machtigingen over zijn/haar documenten.
+</p>
+
+<p>
+Alleen Administrators kunnen de eigenaar van een document wijzigen.
+</p>
+
+<h2>Machtigingen management</h2>
+<p>
+Ieder document of folder/map heeft separate machtigingen. Deze machtigingen werken d.m.v. twee
+systemen:
+<ul>
+<li>De standaard machtigingen worden gebruikt indien geen specifieke machtigingen zijn/worden ingesteld.
+<li>Een lijst van machtigingen stelt de eigenaar in staat om afwijkingen aan te geven van de standaard machtigingen.
+</ul>
+</p>
+
+<h2>Machtigingen erven</h2>
+<p>
+Machtigingen op folders/mappen en documenten kunnen worden ge-erf.
+Dit betekenf dat een folder/map dezelfde machtigingen heeft als zijn bovenliggende folder/map.
+Documenten erven standaard de machtigingen van de folder/map waarin zij zich bevinden.
+</p>
+
+
+<h1>Documenten workflow</h1>
+
+<p>
+Het systeem verwerkt automatisch de workflow van een document en slaat wijzigingen op.
+Het controleert en registreert ook de diverse versies, de commentaren, controles en
+autorisaties/goedkeuringen die op de documenten zijn toegepast/uitgevoerd.
+</p>
+
+<h2>Controle cycle</h2>
+<p>
+Na het uploaden van een document kan de eigenaar het workflow proces opstarten.
+Hij kan gebruikers en/of groepen aanwijzen die het document moeten controleren en/of
+goedkeuren.
+Dit kan eventueel leiden tot een nieuwe/gewijzigde versie van het oorspronkelijke document.
+Als het document door alle betrokkene is gecontroleerd/goedgekeurd, krijgt het document de status [Gepubliceerd].
+</p>
+
+<p>
+De personen belast met het [Controleren] of [Goedkeuren] van een document kunnen een negatief
+advies/commentaar geven. In dat geval krijgt het document de status [Afgewezen].
+</p>
+
+<p>
+Een document dat geen [Controle] of [Goedkeuring] behoeft krijgt meteen de status [Gepubliceerd].
+</p>
+
+<p>
+[Controle] en/of [Goedkeuren] kan worden uitgevoerd door personen en/of groepen.
+In het laatste geval -door groepen- moet de [Controle] en/of [Goedkeuring] worden uitgevoerd door
+tenminste 1 lid van de aangegeven groep.
+</p>
+
+<p>
+De eigenaar van een document kan op ieder gewenst moment de lijst van [Controleurs] en/of [Goedkeurders]
+aanpassen.
+</p>
+
+<h2>Documenten status</h2>
+<p>
+Possible states for a document are:
+<ul>
+<li>Draft - in afwachting van goedkeuring: 
+<li>    1 of meer personen/groepen moeten het document nog [Goedkeuren].
+<li>Draft - in afwachting van controle: 
+<li>    1 of meer personen/groepen moeten het document nog [Controleren].
+<li>Gepubliceerd: Het document -heeft een eventueel noodzakelijke workflow doorlopen en- is definitief.
+<li>Afgewezen: Het document is in zijn huidige vorm door 1 of meerdere [Controleurs] en/of [Goedkeurders] afgewezen.
+<li>Verlopen: De einddatum van een worklow is bereikt zonder dat het document definitief is goedgekeurd en [Gepubliceerd].
+<li>Overtollig: De status van het document kan worden gewijzigd in: [Overtollig]. Deze instelling is identiek aan het annuleren
+van een document. Annuleren is echter niet herroepbaar; [Overtollig] is dat wel.
+</ul>
+</p>
+
+<h2>Verlopen</h2>
+<p>
+Voor ieder document met een workflow, kan een einddatum voor die workflow worden vastgesteld.
+Na die einddatum kunnen geen wijzigingen, controles of goedkeuringen meer worden ingevoerd.
+Het document krijgt de status: [Verlopen].
+</p>
+
+<p>
+De einddatum geldt alleen voor de laatste versie van het document en heeft alleen betrekking op het workflow proces.
+</p>
+
+
+<h1>Overige opties</h1>
+
+<h2>Blokkeer functie</h2>
+<p>
+De [Blokkeer functie] is ontwikkeld om aan te geven dat een document in een workflow proces zit.
+Er kunnen op dat moment geen wijzigingen aan het document worden uitgevoerd.
+De eigenaar en gebruikers met de machtiging [Alle], kunnen de [Blokkeer functie] (tijdelijk) opheffen,
+zodat alsnog modificatie aan een document kunnen worden uitgevoerd.
+</p>
+
+<h2>Notificaties</h2>
+<p>
+Iedere gebruiker kan per map/folder en bestand een verzoek doen tot notificatie.
+Door de map/folder of het bestand toe te voegen aan de persoonlijke notificatielijst wordt
+de gebruiker (middels e-mail) gewaarschuwd over rapporten en wijzigingen in het document, de map/folder.
+</p>
+
+<p>
+Alleen een [Manager] van een Groep kan besluiten om de Groep toe te voegen aan een notificatielijst.
+Met het toevoegen van de Groep krijgen alle leden van die groep automatisch notificaties toegezonden.
+</p>
+
+<h2>Sleutelwoorden en Zoeken</h2>
+<p>
+Ieder document kan worden voorzien van een beschrijving en/of sleutelwoorden.
+Deze toegevoegde informatie kan met behulp van de zoekoptie worden benaderd.</p>
+<p>
+In het individueel menu van iedere gebruiker, kan de gebruiker sleutelwoorden invoeren gegroepeerd in
+categorien. Hiermee kan de gebruiker snel Sleutelwoorden toevoegen aan documenten.
+</p>
+
+<p>
+De optie [Uitgebreid zoeken] wordt ingeschakeld door op de [Zoek]-knop drukt zonder een begrip/woord in te vullen.
+</p>
+
+<h2>Kalender</h2>
+
+<p>
+Er zijn drie weergave opties: per week, maand en jaar.
+De opties worden (per dag) weergegeven in volgorde waarin zij zijn ingevoerd.
+</p>
+
+<p>
+Activiteiten die zijn ingevoerd zijn voor alle geautoriseerde gebruikers zichtbaar.
+Allen de eigenaar van de activiteit (de persoon die de activiteit heeft ingevoerd) of de Administrator
+kan de activiteit wijzigen.
+</p>
+
